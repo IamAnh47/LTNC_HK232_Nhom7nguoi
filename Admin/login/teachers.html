@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/img/what-background-study-how-to-write-1200x801.jpg">
+    <link rel="stylesheet" href="./assets/css/index.css">
+    <link rel="stylesheet" href="./assets/themify-icons-font/themify-icons/themify-icons.css">
+    <link rel="stylesheet" href="./assets/css/admin.css">
+    <script src="https://unpkg.com/lodash@4.17.20"></script>
+
+    <title>Login</title>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <img class="logo" src="./assets/img/logo.png" alt="logo">
+            <ul>
+                    <li><a href="index.html">HOME</a></li>
+                    <li><a href="#">ABOUT US</a></li>
+                    <li><a href="#">COURSE</a></li>
+            </ul>
+            <div class="search">
+                <input class="search-input" type="search" placeholder="Searching your course..." required>
+                <i class="ti-search "></i>
+            </div class = "icon">
+                <i class="ti-bell icon"></i>
+                <i class="ti-menu icon"></i>
+            </div>
+        <form id="form-1" class="form-login">
+            <div class="login-box">
+                <div class="login-header">
+                    <img src="./assets/img/logo.png" alt="">
+                    <h2>LOGIN</h2>    
+                </div>
+                <div class="input-box">
+                    <div  class="form-input" style="margin-top: 20px;"  >
+                        <input id="user" type="text" class="box-input user-input" name="user" title="user">
+                        <label class="user-label"  for="user">user</label>
+                        <span class="form-message"></span>
+                    </div>
+                    <div  class="form-input"  >
+                        <input id ="password" type="password" class="box-input password-input" name="password" title="password">
+                        <label class="password-label"  for="password" >password</label>
+                        <span class="form-message"></span>
+                    </div>
+                </div>
+                  <div class="remember-forgot">
+                    <div class="remember-me">
+                      <input type="checkbox" id="remember">
+                      <label for="remember">Ghi nhớ mật khẩu</label>
+                    </div>
+                  </div>
+                  <div class="input_box">
+                    <input id="submit" type="submit" class="input-submit" value="Login">
+                  </div>
+            </div>
+        </form>
+    </div>
+    <script type="module" src="./assets/js/Validator.js"> </script>
+    <script type="module">
+        import {Validator} from "./assets/js/Validator.js"
+
+       Validator({
+            form: '#form-1',
+            user: "user",
+            rules:[
+                Validator.isRequired('#user','vui lòng nhập tài khoản'),
+                Validator.isRequired('#password','vui lòng nhập mật khẩu'),
+            ],
+            onSubmit: function(){
+                
+            }
+        })
+        
+    </script>
+</body>
+</html>

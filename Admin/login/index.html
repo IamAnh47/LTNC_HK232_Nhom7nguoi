@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./">
+    <link rel="stylesheet" href="./assets/css/index.css">
+    <link rel="stylesheet" href="./assets/themify-icons-font/themify-icons/themify-icons.css">
+    <title>login</title>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <img class="logo" src="./assets/img/logo.png" alt="logo">
+            <ul>
+                    <li><a href="index.html">HOME</a></li>
+                    <li><a href="#">ABOUT US</a></li>
+                    <li><a href="#">COURSE</a></li>
+            </ul>
+            <div class="search">
+                <input class="search-input" type="search" name="search" placeholder="Searching your course..." required>
+                <i class="ti-search "></i>
+                <!-- <label for="search" class="label-search">Searching your course...</label> -->
+            </div>
+            <button class="ti-bell icon" title="notify" >
+                <ul>
+                    <li>thông báo 1</li>
+                    <li>thông báo 2</li>
+                    <li>thông báo 3</li>
+                </ul>
+            </button>
+            
+            <i class="ti-menu icon"></i>
+        </div>
+        <div class="form-login">
+            <div class="login-box">
+                <div class="login-header">
+                    <img src="./assets/img/logo.png" alt="">
+                    <h2>Sign In</h2>    
+                </div>
+                <div class="input-box">
+                    <button type="button" class="box" title=" teacher"></button>
+                    <a href="teachers.html" class="gv-sv">Teachers / Students</a>
+                    <button type="button" class="box" style="margin-bottom:10px ;" title="admin"></button>
+                    <a href="adminLogin.html" class="admin" for="admin">Admin</a>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+    <script type="module" src="./assets/js/Validator.js"> </script>
+    <script>
+        const myData = localStorage.getItem('user');
+        console.log(myData); // Output: Hello from localStorage!
+    </script>
+</body>
+</html>

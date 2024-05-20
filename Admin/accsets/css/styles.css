@@ -1,0 +1,3062 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* overflow: auto; */
+}
+html {
+    font-family: system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color";
+    /* -webkit-text-size-adjust: 100%;
+    line-height: 1.15; */
+    height: 100vh;
+    overflow: auto;
+}
+body {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    height: 100vh;
+    /* background: url(../img/home.gif) center/ cover no-repeat; */
+    overflow: auto;
+}
+#main {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    height: 100vh;
+    overflow: auto;
+    overflow-x: hidden;
+}
+/* height chuẩn ban đầu là 80px */
+#header {
+    height: 80px;
+    background-color: rgb(13 151 217);
+    /* background: url(../img/rain.gif) center/ cover no-repeat; */
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 1000;
+    font-weight: bold;
+}
+#header .icon .iconmenu {
+    display: inline-block;
+    line-height: 80px;
+    font-size: 40px;
+    position: absolute;
+    left: 0;
+    padding: 0 20px;
+    cursor: pointer;
+}
+
+#header .content-header {
+    display: inline-block;
+    line-height: 80px;
+    position: absolute;
+    left: calc(100vw - 391.75px - (100vw - 391.75px)/2);
+    font-size: 40px;
+    text-shadow: 2px 2px 4px #ffffff;
+}
+
+#header .logo-header {
+    height: 80px;
+    width: 80px;
+    position: absolute;
+    right: 10px;
+    cursor: pointer;
+}
+
+#header .logo-header img {
+    height: 75px;
+    width: 75px;
+    position: absolute;
+    top: 2.5px;
+    left: 2.5px;
+}
+
+#slider {
+    position: absolute;
+    top: 80px;
+    margin-left: 10px;
+    margin-right: 10px;
+    overflow: auto;
+    overflow-x: hidden;
+}
+.slider-wrapper {
+    display: flex;
+    transition: transform 0.8s ease;
+    height: 400px;
+    width: 100%;
+}
+.content_slider {
+    margin-top: 20px;
+    /* display: flex; */
+    /* justify-content: center; */
+    /* align-content: center; */
+}
+.slide {
+    flex: 0 0 auto;
+    width: 100%;
+}
+
+.slider-wrapper img {
+    width: 100%;
+    height: 100%;
+}
+.footer_slider {
+    width: 100%;
+    height: 150px;
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #0097e8;
+}
+#sidebar {
+    height: 1500px;
+    width: 260px;
+    background-color: #ffffff;
+    overflow-x: hidden;
+    overflow-y: auto;
+    position: absolute;
+    /* top: 80px; */
+    left: -265px;
+    transition: left 0.3s ease;
+    /* box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.5); */
+    z-index: 10000000;
+    font-weight: bold;
+}
+
+#sidebar .icon {
+    display: inline-block;
+    line-height: 80px;
+    font-size: 40px;
+    padding: 0 17px;
+    cursor: pointer;
+}
+.icon:hover {
+    color: #187ce0;
+}
+#sidebar .logo-sidebar {
+    width: 80px;
+    height: 80px;
+}
+#sidebar .logo-sidebar img {
+    height: 60px;
+    width: 60px;
+    position: absolute;
+    left: calc((100% - 60px) / 2);
+    top: 10px;
+}
+
+#sidebar .menu {
+    display: block;
+    position: absolute;
+    top: 80px;
+    margin-right: 10px;
+}
+
+#sidebar .menu li {
+    list-style-type: none;
+    line-height: 60px;
+    background-color: rgb(255, 255, 255);
+    padding: 0 0 0 0px;
+    width: 260px;
+}
+
+#sidebar .menu a {
+    text-decoration: none;
+    display: block;
+    color: #000;
+}
+
+#sidebar > .menu > a {
+    color: rgb(0, 0, 0);
+}
+
+#sidebar .menu .submenu a {
+    color: #ffffff;
+    background-color: rgb(29, 67, 54);
+}
+
+#sidebar > .menu > li {
+    line-height: 80px;
+}
+
+#sidebar .menu .submenu {
+    display: none;
+    animation: animationOpenSubmenu ease-in 0.1s;
+}
+
+#sidebar .menu .submenu li {
+    color: #ffffff;
+}
+
+#sidebar .menu li .submenu.active{
+    display: block;
+}
+
+#sidebar .menu .icon-menu {
+    display: inline-block;
+    font-size: 22px;
+    padding: 0 35px 0 24px;
+}
+
+#sidebar > .menu > li:hover > a{
+    background-color: rgb(35, 36, 38);
+    color: #ffffff;
+}
+
+#sidebar .menu .submenu li {
+    background-color: #363535;
+    border: 1px solid #3c3939; 
+}
+
+#sidebar .menu .submenu li:hover a {
+    background-color: rgb(138, 161, 180);
+    color: #ffffff;
+}
+
+#sidebar .menu .submenu li a {
+    padding: 0 0 0 50px;
+}
+
+/* Bắt đầu nội dung các mục */
+
+#container {
+    height: 100%;
+    width: 100%;
+    background-color: #ffffff;
+    /* background: url(../img/logo.png) center / cover no-repeat; */
+    position: absolute;
+    top: 0px;
+    left: -100%;
+    /* left: 0; */
+    z-index: 1;
+    overflow: auto;
+}
+
+.fix-li li {
+    list-style-type: none;
+}
+
+.fix-a a {
+    text-decoration: none;
+}
+
+#container .content-student {
+    height: 100%;
+    width: 98%;
+    background-color: #afadad;
+    /* background: url(../img/book.png) center/ cover no-repeat; */
+    padding: 0px 10px;
+    position: absolute;
+    left: -100%;
+    /* left: 1%; */
+    top: calc(80px + 1%);
+    overflow: auto;
+    overflow-x: hidden;
+    padding: 10px;
+    transition: left 0.3s ease;
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 1), /* Bóng đổ bên trong */
+    0 0 10px rgba(0, 0, 0, 0.5);      /* Bóng đổ bên ngoài */
+    z-index: 0;
+}
+
+.content-student .outside-select-student {
+    height: 160px;
+    width: 99%;
+    position: relative;
+    background-color: rgba(0, 239, 20, 0.5);
+    background-image: url(../img/image.png) ;
+    margin: 10px;
+    margin-bottom: 20px;
+    margin-top: 40px;
+    border-radius: 10px;
+    box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.5);
+}
+
+.content-student .outside-icon-select {
+    height: 38px;
+    width: 38px;
+    float: right;
+}
+
+/*  */
+
+.content-student .icon-exit_student {
+    height: 50px;
+    width: 50px;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+
+}
+
+.content-student .icon-exit_student .icon-exit_std {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+}
+
+.content-student .icon-exit_student:hover {
+    background-color: #ee1d06;
+    color: #fff;
+    cursor: pointer;
+}
+/*  */
+
+/* Begin: Chọn khoa */
+.content-student .outside-select-department_student {
+    height: 38px;
+    width: 296px;
+    position: absolute;
+    top: 18px;
+    left: 200px;
+    z-index: 1;
+}
+
+.content-student .select-department_student li a {
+    color: #000000;
+    width: 100%;
+}
+
+.content-student .options-department_student {
+    display: none;
+    width: 256px;
+    background-color: aqua;
+    position: absolute;
+    top: 38px;
+    left: 1px;
+}
+
+.content-student .select-department_student li {
+    width: 100%;
+    box-shadow: 2px 2px 4px 0px rgba(0, 0, 0, 0.5);
+    padding: 6px 8px;
+}
+
+.outside-select-department_student .type-select-department_student {
+    display: inline-block;
+    height: 38px;
+    width: 258px;
+}
+/* End: Chọn khoa */
+
+/* Begin: Chọn khóa */
+.content-student .outside-select-year {
+    height: 38px;
+    width: 143px;
+    position: absolute;
+    top: 18px;
+    left: 35px;
+    z-index: 1;
+}
+
+.content-student .select-year li a {
+    color: #000000;
+    width: 100%;
+}
+
+.content-student .options-year {
+    display: none;
+    width: 105px;
+    background-color: aqua;
+    position: absolute;
+    top: 38px;
+    left: 1px;
+}
+
+.content-student .select-year li {
+    width: 100%;
+    box-shadow: 2px 2px 4px 0px rgba(0, 0, 0, 0.5);
+    padding: 6px 8px;
+}
+
+.outside-select-year .type-select-year {
+    display: inline-block;
+    height: 38px;
+    width: 105px;
+}
+/* End: Chọn khóa */
+
+/* Begin: Chọn ngành */
+.content-student .outside-select-major {
+    height: 38px;
+    width: 296px;
+    position: absolute;
+    top: 18px;
+    left: 518px;
+    z-index: 1;
+}
+
+.content-student .select-major li a {
+    color: #000000;
+    width: 100%;
+}
+
+.content-student .options-major {
+    display: none;
+    width: 256px;
+    background-color: aqua;
+    position: absolute;
+    top: 38px;
+    left: 1px;
+}
+
+.content-student .select-major li {
+    width: 100%;
+    box-shadow: 2px 2px 4px 0px rgba(0, 0, 0, 0.5);
+    padding: 6px 8px;
+}
+
+.outside-select-major .type-select-major {
+    display: inline-block;
+    height: 38px;
+    width: 258px;
+}
+
+/* End: Chọn ngành */
+
+/* Begin: Chọn lớp */
+
+.content-student .outside-select-class {
+    height: 38px;
+    width: 204px;
+    position: absolute;
+    top: 18px;
+    left: 836px;
+    z-index: 1;
+}
+
+.content-student .select-class li a {
+    color: #000000;
+    width: 100%;
+}
+
+.content-student .options-class {
+    display: none;
+    width: 165px;
+    background-color: aqua;
+    position: absolute;
+    top: 38px;
+    left: 1px;
+}
+
+.content-student .select-class li {
+    width: 100%;
+    box-shadow: 2px 2px 4px 0px rgba(0, 0, 0, 0.5);
+    padding: 6px 8px;
+}
+
+.outside-select-class .type-select-class {
+    display: inline-block;
+    height: 38px;
+    width: 166px;
+}
+
+
+/* End: Chọn lớp */
+
+/* Begin: Tình trạng */
+
+.content-student .outside-select-status {
+    height: 38px;
+    width: 204px;
+    position: absolute;
+    top: 18px;
+    left: 1062px;
+    z-index: 1;
+}
+
+.content-student .select-status li a {
+    color: #000000;
+    width: 100%;
+}
+
+.content-student .options-status {
+    display: none;
+    width: 165px;
+    background-color: aqua;
+    position: absolute;
+    top: 38px;
+    left: 1px;
+}
+
+.content-student .select-status li {
+    width: 100%;
+    box-shadow: 2px 2px 4px 0px rgba(0, 0, 0, 0.5);
+    padding: 6px 8px;
+}
+
+.outside-select-status .type-select-status {
+    display: inline-block;
+    height: 38px;
+    width: 166px;
+}
+
+/* End: Tình trạng */
+
+/* Begin: Tìm kiếm MSSV */
+
+.content-student .outside-select-MSSV {
+    height: 38px;
+    width: 143px;
+    position: absolute;
+    top: 88px;
+    left: 35px;
+    z-index: 0;
+}
+
+.outside-select-MSSV .type-select-MSSV {
+    display: inline-block;
+    height: 38px;
+    width: 105px;
+}
+
+/* End: Tìm kiếm MSSV */
+
+/* Enter */
+
+.content-student .select-enter_student {
+    height: 54px;
+    width: 186px;
+    position: absolute;
+    top: 81px;
+    left: 1184px;
+    z-index: 0;
+}
+
+.content-student .select-enter_student .button-enter_student {
+    height: 100%;
+    width: 100%;
+    background-color: #06c7ee;
+    cursor: pointer;
+}
+/* Enter */
+
+/* Begin: Edit student */
+
+.content-student .edit-student {
+    height: 71px;
+    width: 701px;
+    background-color: rgba(3, 159, 206, 0.5);
+    border-radius: 5px;
+    position: absolute;
+    top: 72px;
+    left: 200px;
+    z-index: 0;
+}
+
+.content-student .edit-student .add-student {
+    height: 54px;
+    width: 156px;
+    background-color: #a6da15;
+    position: absolute;
+    top: 9px;
+    left: 12px;
+}
+
+.content-student .edit-student .delete-student {
+    height: 54px;
+    width: 156px;
+    background-color: #a6da15;
+    position: absolute;
+    top: 9px;
+    left: 186px;
+}
+
+.edit-student .add-student button {
+    height: 100%;
+    width: 100%;
+    background-color: #06c7ee;
+    cursor: pointer;
+}
+
+.edit-student .delete-student button {
+    height: 100%;
+    width: 100%;
+    background-color: #ee1d06;
+    cursor: pointer;
+}
+
+.content-student .edit-student .download-table_student {
+    height: 54px;
+    width: 156px;
+    background-color: #a6da15;
+    position: absolute;
+    top: 9px;
+    left: 360px;
+}
+
+.edit-student .download-table_student button {
+    height: 100%;
+    width: 100%;
+    background-color: #29ee06;
+    cursor: pointer;
+}
+
+.content-student .edit-student .upload-table_student {
+    height: 54px;
+    width: 156px;
+    background-color: #a6da15;
+    position: absolute;
+    top: 9px;
+    left: 534px;
+    cursor: pointer;
+}
+
+.edit-student .upload-table_student button {
+    height: 100%;
+    width: 100%;
+    background-color: #00bd7e;
+    cursor: pointer;
+}
+
+.edit-student .upload-table_student label {
+    cursor: pointer;
+}
+
+/* End: Edit student */
+
+
+
+/* Begin: Table student */
+
+
+/* Begin: icon_detail */
+.outside_detail {
+    display: inline-block;
+    cursor: pointer;
+}
+.outside_detail:hover {
+    opacity: 0.5;
+}
+/* End: icon_detail */
+
+/* Begin: info student */
+
+.modal_student {
+    position: fixed;
+    top: 0px;
+    right: 0px;
+    left: 0px;
+    bottom: 0px;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    overflow: auto;
+}
+
+.grid_2row_4col {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 5px;
+}
+
+.grid_2row {
+    display: grid;
+    grid-template-rows: 0.2fr 1fr; 
+}
+
+.grid_3row {
+    display: grid;
+    grid-template-rows: 0.2fr 1fr 0.3fr; 
+}
+
+.background_margin5px {
+    background-color: #ffffff;
+    margin: 5px;
+    padding: 0 0 0 5px;
+}
+
+.background_margin5px p {
+    margin-top: 10px;
+}
+
+.background_margin5px label {
+    font-weight: bold;
+}
+.outside_info_std {
+    height: 620px;
+    width: 920px;
+    background-color: #00ff40;
+    border-radius: 10px;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    box-shadow: inset 5px 5px 10px rgba(0, 0, 0, 0.5);
+}
+.info_student {
+    height: 600px;
+    width: 900px;
+    background-color: #ffffff;
+    display: grid;
+    /* display: none; */
+    grid-template-rows: 1fr 1fr;
+    gap: 2px;
+    position: relative;
+    /* padding: 5px; */
+    margin: 10px;
+    animation: modal_info_std ease 0.3s;
+}
+
+.info_student .info-student-normal .header-info_student {
+    background-color: #12a3c7;
+    display: flex;
+    align-items: center;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.p10px p {
+    padding-left: 10px;
+}
+
+
+.info_student .info-student-progress .header-progress_student {
+    background-color: #12a3c7;
+    display: flex;
+    align-items: center;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.info_student .info_std_exit {
+    height: 49.83px;
+    width: 49.83px;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.info_student .info_std_exit:hover {
+    background-color: red;
+    color: #fff;
+}
+
+
+/*  */
+
+.info_student .info-student-progress .edit_a_student {
+    background-color: #ffffff;
+    display: grid;
+    grid-template-columns: 10fr 2fr;
+    gap: 90px;
+    font-weight: bold;
+}
+
+.info-student-progress .edit_a_student button {
+    font-weight: bold;
+}
+
+.info-student-progress .edit_a_student .edit-info_std {
+    background-color: #f60000;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* .info-student-progress .edit_a_student .enter-info_std {
+    background-color: #00ff9d;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+} */
+
+.outside-form-info_std {
+    position: fixed;
+    top: 0px;
+    right: 0px;
+    left: 0px;
+    bottom: 0px;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: auto;
+    display: none;
+}
+
+.form_info_student {
+    height: 600px;
+    width: 900px;
+    background-color: #ffffff;
+    display: grid;
+    /* display: none; */
+    grid-template-rows: 1fr 1fr;
+    gap: 2px;
+    position: relative;
+    /* padding: 5px; */
+    margin: 10px;
+    animation: modal_info_std ease 0.3s;
+}
+
+.form_info_student .info-student-normal .header-info_student {
+    background-color: #12a3c7;
+    display: flex;
+    align-items: center;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.p10px p {
+    padding-left: 10px;
+}
+
+
+.form_info_student .info-student-progress .header-progress_student {
+    background-color: #12a3c7;
+    display: flex;
+    align-items: center;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.form_info_student .info_std_exit {
+    height: 49.83px;
+    width: 49.83px;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.form_info_student .info_std_exit:hover {
+    background-color: red;
+    color: #fff;
+}
+
+
+/*  */
+
+.form_info_student .info-student-progress .edit_a_student {
+    background-color: #ffffff;
+    display: grid;
+    grid-template-columns: 10fr 2fr;
+    gap: 90px;
+    font-weight: bold;
+}
+
+.form_info_student label {
+    padding-right: 50px;
+}
+
+.input-style {
+    padding: 10px;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    font-size: 12px;
+    color: #555;
+    outline: none;
+    width: 150px;
+    margin-top: 10px;
+  }
+  
+.input-style:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+.date_std {
+    padding: 10px;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    font-size: 12px;
+    color: #555;
+    outline: none;
+    width: 150px;
+    margin-top: 10px;
+}
+
+@keyframes modal_info_std {
+    from {
+        opacity: 0;
+        transform: translateY(-100px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+
+
+
+
+/* End: info student */
+
+/* Add student */
+.edit_edit_a_student .edit_edit-info_std {
+    height: 100%;
+    background-color: #f60000;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+}
+.edit_outside-form-info_std {
+    position: fixed;
+    top: 0px;
+    right: 0px;
+    left: 0px;
+    bottom: 0px;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: auto;
+    display: none;
+}
+
+#edit_form_info_student {
+    height: 600px;
+    width: 900px;
+    background-color: #ffffff;
+    display: grid;
+    /* display: none; */
+    grid-template-rows: 1fr 1fr;
+    gap: 2px;
+    position: relative;
+    /* padding: 5px; */
+    margin: 10px;
+    animation: modal_info_std ease 0.3s;
+}
+
+#edit_form_info_student .edit_info-student-normal .edit_header-info_student {
+    background-color: #12a3c7;
+    display: flex;
+    align-items: center;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.p10px p {
+    padding-left: 10px;
+}
+
+
+#edit_form_info_student .edit_info-student-progress .edit_header-progress_student {
+    background-color: #12a3c7;
+    display: flex;
+    align-items: center;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+#edit_form_info_student .edit_info_std_exit {
+    height: 49.83px;
+    width: 49.83px;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+#edit_form_info_student .edit_info_std_exit:hover {
+    background-color: red;
+    color: #fff;
+}
+
+
+/*  */
+
+#edit_form_info_student .edit_info-student-progress .edit_a_student {
+    background-color: #ffffff;
+    display: grid;
+    grid-template-columns: 10fr 2fr;
+    gap: 90px;
+    font-weight: bold;
+}
+
+#edit_form_info_student label {
+    padding-right: 50px;
+}
+
+.edit_input-style {
+    padding: 10px;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    font-size: 12px;
+    color: #555;
+    outline: none;
+    width: 150px;
+    margin-top: 10px;
+  }
+  
+.edit_input-style:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+.edit_date_std {
+    padding: 10px;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    font-size: 12px;
+    color: #555;
+    outline: none;
+    width: 150px;
+    margin-top: 10px;
+}
+/* Add studen */
+/* End: Table student */
+
+
+#footer {
+
+}
+
+@keyframes animationOpenSubmenu {
+    from {
+        transform: translateX(-260px);
+    }
+    to {
+        transform: translateX(0px);
+    }
+}
+
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+    th, td {
+        border: 1px solid #000;
+        padding: 8px;
+        text-align: center;
+    }
+
+    th {
+        background-color: #a6da15;
+        height: 80px;
+        text-align: center;
+    }
+    tr > td:first-child {
+        text-align: center;
+    }
+
+    .not_center {
+        text-align: left;
+    }
+
+
+/* Begin: teacher */
+
+#container .content-teacher {
+    height: 100%;
+    width: 98%;
+    background-color: #afadad;
+    padding: 0px 10px;
+    position: absolute;
+    left: -100%;
+    /* left: 1%; */
+    top: calc(80px + 1%);
+    overflow: auto;
+    overflow-x: hidden;
+    padding: 10px;
+    transition: left 0.3s ease;
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 1), /* Bóng đổ bên trong */
+    0 0 10px rgba(0, 0, 0, 0.5);      /* Bóng đổ bên ngoài */
+    z-index: 0;
+}
+
+.content-teacher .outside-select-teacher {
+    height: 160px;
+    width: 99%;
+    position: relative;
+    background-color: rgba(0, 239, 20, 0.5);
+    background: url(../img/image.png) center/ cover no-repeat;
+    margin: 10px;
+    margin-bottom: 20px;
+    margin-top: 40px;
+    border-radius: 10px;
+    box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.5);
+}
+
+.content-teacher .outside-icon-select {
+    height: 38px;
+    width: 38px;
+    float: right;
+}
+
+/*  */
+
+.content-teacher .icon-exit_teacher {
+    height: 50px;
+    width: 50px;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+
+}
+
+.content-teacher .icon-exit_teacher .icon-exit_std {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+}
+
+.content-teacher .icon-exit_teacher:hover {
+    background-color: #ee1d06;
+    color: #fff;
+    cursor: pointer;
+}
+/*  */
+
+/* Begin: Chọn khoa */
+.content-teacher .outside-select-department_teacher {
+    height: 38px;
+    width: 296px;
+    position: absolute;
+    top: 25px;
+    left: 35px;
+    z-index: 1;
+}
+
+.content-teacher .select-department_teacher li a {
+    color: #000000;
+    width: 100%;
+}
+
+.content-teacher .options-department_teacher {
+    display: none;
+    width: 256px;
+    background-color: aqua;
+    position: absolute;
+    top: 38px;
+    left: 1px;
+}
+
+.content-teacher .select-department_teacher li {
+    width: 100%;
+    box-shadow: 2px 2px 4px 0px rgba(0, 0, 0, 0.5);
+    padding: 6px 8px;
+}
+
+.outside-select-department_teacher .type-select-department_teacher {
+    display: inline-block;
+    height: 38px;
+    width: 258px;
+}
+
+/* End: teacher */
+
+/* Begin: degree */
+
+.content-teacher .outside-select-degree_teacher {
+    height: 38px;
+    width: 187px;
+    position: absolute;
+    top: 25px;
+    left: 336px;
+    z-index: 1;
+}
+
+.content-teacher .select-degree_teacher li a {
+    color: #000000;
+    width: 100%;
+}
+
+.content-teacher .options-degree_teacher {
+    display: none;
+    width: 149px;
+    background-color: aqua;
+    position: absolute;
+    top: 38px;
+    left: 1px;
+}
+
+.content-teacher .select-degree_teacher li {
+    width: 100%;
+    box-shadow: 2px 2px 4px 0px rgba(0, 0, 0, 0.5);
+    padding: 6px 8px;
+}
+
+.outside-select-degree_teacher .type-select-degree_teacher {
+    display: inline-block;
+    height: 38px;
+    width: 149px;
+}
+
+/* End: degree */
+
+/* Begin: Tìm kiếm MSGV */
+
+.content-teacher .outside-select-MSGV {
+    height: 38px;
+    width: 143px;
+    position: absolute;
+    top: 86px;
+    left: 35px;
+    z-index: 0;
+}
+
+.outside-select-MSGV .type-select-MSGV {
+    display: inline-block;
+    height: 38px;
+    width: 105px;
+}
+
+/* End: Tìm kiếm MSGV */
+
+/* Enter */
+
+.content-teacher .select-enter_teacher {
+    height: 69px;
+    width: 225px;
+    position: absolute;
+    top: 73px;
+    left: 298px;
+    z-index: 0;
+}
+
+.content-teacher .select-enter_teacher .button-enter_teacher {
+    height: 100%;
+    width: 100%;
+    background-color: #06c7ee;
+    cursor: pointer;
+}
+/* Enter */
+
+/* Begin: Edit teacher */
+
+.content-teacher .edit-teacher {
+    height: 100px;
+    width: 825px;
+    background-color: rgba(3, 159, 206, 0.5);
+    border-radius: 5px;
+    position: absolute;
+    top: 32px;
+    left: 552px;
+    z-index: 0;
+}
+
+.content-teacher .edit-teacher .add-teacher {
+    height: 79px;
+    width: 188px;
+    background-color: #a6da15;
+    position: absolute;
+    top: 9px;
+    left: 12px;
+}
+
+.content-teacher .edit-teacher .delete-teacher {
+    height: 79px;
+    width: 188px;
+    /* width: 156px; */
+    background-color: #a6da15;
+    position: absolute;
+    top: 9px;
+    left: 216px;
+}
+
+.edit-teacher .add-teacher button {
+    height: 100%;
+    width: 100%;
+    background-color: #06c7ee;
+    cursor: pointer;
+}
+
+.edit-teacher .delete-teacher button {
+    height: 100%;
+    width: 100%;
+    background-color: #ee1d06;
+    cursor: pointer;
+}
+
+.content-teacher .edit-teacher .download-table_teacher {
+    height: 79px;
+    width: 188px;
+    background-color: #a6da15;
+    position: absolute;
+    top: 9px;
+    left: 420px;
+}
+
+.edit-teacher .download-table_teacher button {
+    height: 100%;
+    width: 100%;
+    background-color: #29ee06;
+    cursor: pointer;
+}
+
+.content-teacher .edit-teacher .upload-table_teacher {
+    height: 79px;
+    width: 188px;
+    background-color: #a6da15;
+    position: absolute;
+    top: 9px;
+    left: 624px;
+    cursor: pointer;
+}
+
+.edit-teacher .upload-table_teacher button {
+    height: 100%;
+    width: 100%;
+    background-color: #00bd7e;
+    cursor: pointer;
+}
+
+.edit-teacher .upload-table_teacher label {
+    cursor: pointer;
+}
+
+/* End: Edit teacher */
+
+/* Begin: icon_detail */
+.outside_detail {
+    display: inline-block;
+    cursor: pointer;
+}
+.outside_detail:hover {
+    opacity: 0.5;
+}
+/* End: icon_detail */
+
+/* Begin: info teacher */
+
+.modal_teacher {
+    position: fixed;
+    top: 0px;
+    right: 0px;
+    left: 0px;
+    bottom: 0px;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    overflow: auto;
+}
+
+.grid_2row_4col {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 5px;
+}
+.grid_1row_4col {
+    display: grid;
+    grid-template-rows: 0.4fr 0.4fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 5px;
+}
+
+.grid_2row {
+    display: grid;
+    grid-template-rows: 0.2fr 1fr; 
+}
+
+.grid_3row {
+    display: grid;
+    grid-template-rows: 0.2fr 1fr 0.3fr; 
+}
+
+.background_margin5px {
+    background-color: #ffffff;
+    margin: 5px;
+    padding: 0 0 0 5px;
+}
+
+.background_margin5px p {
+    margin-top: 10px;
+}
+
+.background_margin5px label {
+    font-weight: bold;
+}
+.outside_info_tch {
+    height: 620px;
+    width: 920px;
+    background-color: #00ff40;
+    border-radius: 10px;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    box-shadow: inset 5px 5px 10px rgba(0, 0, 0, 0.5);
+}
+.info_teacher {
+    height: 600px;
+    width: 900px;
+    background-color: #ffffff;
+    display: grid;
+    /* display: none; */
+    grid-template-rows: 1fr 1fr;
+    gap: 2px;
+    position: relative;
+    /* padding: 5px; */
+    margin: 10px;
+    animation: modal_info_tch ease 0.3s;
+}
+
+.info_teacher .info-teacher-normal .header-info_teacher {
+    background-color: #8c8edf;
+    display: flex;
+    align-items: center;
+    font-size: 20px;
+}
+
+.p10px p {
+    padding-left: 10px;
+}
+
+
+.info_teacher .info-teacher-progress .header-progress_teacher {
+    background-color: #8c8edf;
+    display: flex;
+    align-items: center;
+    font-size: 20px;
+}
+
+.info_teacher .info_tch_exit {
+    height: 49.83px;
+    width: 49.83px;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.info_teacher .info_tch_exit:hover {
+    background-color: red;
+    color: #fff;
+}
+
+
+/*  */
+
+.info_teacher .info-teacher-progress .edit_a_teacher {
+    background-color: #ffffff;
+    display: grid;
+    grid-template-columns: 10fr 2fr;
+    gap: 90px;
+}
+
+.info-teacher-progress .edit_a_teacher .edit-info_tch {
+    background-color: #f60000;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* .info-teacher-progress .edit_a_teacher .enter-info_tch {
+    background-color: #00ff9d;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+} */
+
+.outside-form-info_tch {
+    position: fixed;
+    top: 0px;
+    right: 0px;
+    left: 0px;
+    bottom: 0px;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    overflow: auto;
+    
+}
+
+.form_info_teacher {
+    height: 600px;
+    width: 900px;
+    background-color: #ffffff;
+    display: grid;
+    /* display: none; */
+    grid-template-rows: 1fr 1fr;
+    gap: 2px;
+    position: relative;
+    /* padding: 5px; */
+    margin: 10px;
+    animation: modal_info_tch ease 0.3s;
+}
+
+.form_info_teacher .info-teacher-normal .header-info_teacher {
+    background-color: #8c8edf;
+    display: flex;
+    align-items: center;
+    font-size: 20px;
+}
+
+.p10px p {
+    padding-left: 10px;
+}
+
+
+.form_info_teacher .info-teacher-progress .header-progress_teacher {
+    background-color: #8c8edf;
+    display: flex;
+    align-items: center;
+    font-size: 20px;
+}
+
+.form_info_teacher .info_tch_exit {
+    height: 49.83px;
+    width: 49.83px;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.form_info_teacher .info_tch_exit:hover {
+    background-color: red;
+    color: #fff;
+}
+
+
+/*  */
+
+.form_info_teacher .info-teacher-progress .edit_a_teacher {
+    background-color: #ffffff;
+    display: grid;
+    grid-template-columns: 10fr 2fr;
+    gap: 90px;
+}
+
+.form_info_teacher label {
+    padding-right: 50px;
+}
+
+.input-style {
+    padding: 10px;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    font-size: 12px;
+    color: #555;
+    outline: none;
+    width: 150px;
+    margin-top: 10px;
+  }
+  
+.input-style:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+.date_tch {
+    padding: 10px;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    font-size: 12px;
+    color: #555;
+    outline: none;
+    width: 150px;
+    margin-top: 10px;
+}
+
+@keyframes modal_info_tch {
+    from {
+        opacity: 0;
+        transform: translateY(-100px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Thêm giảng viên */
+/* ---------------------------------------------------------------- */
+
+.edit_outside-form-info_tch {
+    position: fixed;
+    top: 0px;
+    right: 0px;
+    left: 0px;
+    bottom: 0px;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    overflow: auto;
+    
+}
+
+#edit_form_info_teacher {
+    height: 600px;
+    width: 900px;
+    background-color: #ffffff;
+    display: grid;
+    /* display: none; */
+    grid-template-rows: 1fr 1fr;
+    gap: 2px;
+    position: relative;
+    /* padding: 5px; */
+    margin: 10px;
+    animation: modal_info_tch ease 0.3s;
+}
+
+#edit_form_info_teacher .edit_info-teacher-normal .edit_header-info_teacher {
+    background-color: #8c8edf;
+    display: flex;
+    align-items: center;
+    font-size: 20px;
+}
+
+.p10px p {
+    padding-left: 10px;
+}
+
+
+#edit_form_info_teacher .edit_info-teacher-progress .edit_header-progress_teacher {
+    background-color: #8c8edf;
+    display: flex;
+    align-items: center;
+    font-size: 20px;
+}
+
+#edit_form_info_teacher .edit_info_tch_exit {
+    height: 49.83px;
+    width: 49.83px;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+#edit_form_info_teacher .edit_info_tch_exit:hover {
+    background-color: red;
+    color: #fff;
+}
+
+
+/*  */
+
+#edit_form_info_teacher .edit_info-teacher-progress .edit_edit_a_teacher {
+    background-color: #ffffff;
+    display: grid;
+    grid-template-columns: 10fr 2fr;
+    gap: 90px;
+}
+
+#edit_form_info_teacher label {
+    padding-right: 50px;
+}
+
+.input-style {
+    padding: 10px;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    font-size: 12px;
+    color: #555;
+    outline: none;
+    width: 150px;
+    margin-top: 10px;
+  }
+  
+.input-style:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+.edit_date_tch {
+    padding: 10px;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    font-size: 12px;
+    color: #555;
+    outline: none;
+    width: 150px;
+    margin-top: 10px;
+}
+
+@keyframes modal_info_tch {
+    from {
+        opacity: 0;
+        transform: translateY(-100px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+/* ---------------------------------------------------------------- */
+/* -------------------------Begin: Quản lí khóa học------------------ */
+
+#container .content_sc {
+    height: 100%;
+    width: 98%;
+    background-color: #afadad;
+    /* background: url(../img/book.png) center/ cover no-repeat; */
+    padding: 0px 10px;
+    position: absolute;
+    left: -100%;
+    /* left: 1%; */
+    top: calc(80px + 1%);
+    overflow: auto;
+    overflow-x: hidden;
+    padding: 10px;
+    transition: left 0.3s ease;
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 1), /* Bóng đổ bên trong */
+    0 0 10px rgba(0, 0, 0, 0.5);      /* Bóng đổ bên ngoài */
+    z-index: 0;
+}
+
+#container .header_sc {
+    width: 100%;
+    height: 160px;
+    background-color: #ddd;
+    display: grid;
+    grid-template-rows: 1fr 3fr;
+    margin-bottom: 4%;
+    background-color: wheat;
+    /* padding-bottom: 20px; */
+}
+/* 
+#container .header_sc .exit_content_sc {
+    background-color: #90c901;
+} */
+
+#container .header_sc .edit_content_sc {
+    background-color: wheat;
+    padding-bottom: 20px;
+}
+
+.header_sc .exit_content_sc .outside_exit_icon_content_sc {
+    display: flex;
+    height: 40px;
+    width: 40px;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    float: right;
+    /* background-color: #fff; */
+    cursor: pointer;
+}
+
+.header_sc .exit_content_sc .outside_exit_icon_content_sc:hover {
+    background-color: red;
+    color: #fff;
+}
+
+#container .header_sc .edit_content_sc {
+    display: grid;
+    grid-template-rows: 1fr 1.2fr;
+    gap: 10px;
+}
+
+/* .header_sc .edit_content_sc .t_edit_content_sc {
+    background-color: aqua;
+}
+
+.header_sc .edit_content_sc .b_edit_content_sc {
+    background-color: rgb(115, 229, 8);
+} */
+
+.header_sc .edit_content_sc .t_edit_content_sc {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    gap: 20px;
+
+}
+
+.header_sc .edit_content_sc .edit_content_mskh {
+    /* background-color: #fff; */
+    margin-left: 40px;
+    margin-right: 30px;
+}
+.edit_content_sc .edit_content_mskh input {
+    height: 100%;
+    width: 100%;
+    text-align: center;
+}
+
+.header_sc .edit_content_sc .edit_content_name_sc {
+    /* background-color: #fff; */
+
+}
+.edit_content_sc .edit_content_name_sc input {
+    height: 100%;
+    width: 100%;
+    text-align: center;
+}
+
+.header_sc .edit_content_sc .edit_add_content_sc {
+    /* background-color: #fff; */
+
+}
+.edit_content_sc .edit_add_content_sc button {
+    height: 100%;
+    width: 100%;
+    text-align: center;
+    cursor: pointer;
+}
+
+.header_sc .edit_content_sc .edit_delete_content_sc {
+    /* background-color: #fff; */
+
+}
+.edit_content_sc .edit_delete_content_sc button {
+    height: 100%;
+    width: 100%;
+    text-align: center;
+    cursor: pointer;
+}
+/* Thêm khóa học */
+.edit_content_sc .edit_add_content_sc button {
+    text-align: center;
+    cursor: pointer;
+    padding: 1.2px 3px;
+    width: 265px;
+    height: 54px;
+    background-color: #212121;
+    border: 0.96px solid #fff;
+    border-radius: 3.6px;
+    font-size: 12px;
+}
+
+.edit_add_content_sc button span {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    bottom: 4.8px;
+    width: 258px;
+    height: 47.5px;
+    background-color: #212121;
+    border-radius: 2.4px;
+    font-size: 18px;
+    color: #fff;
+    border: 0.96px solid #fff;
+    box-shadow: 0 4.8px 1.2px 0.228px #fff;
+}
+
+.edit_add_content_sc button span:hover {
+    transition: all 0.3s;
+    transform: translate(0, 4.8px);
+    box-shadow: 0 0 0 0 #fff;
+}
+
+.edit_add_content_sc button span:not(hover) {
+    transition: all 0.5s;
+}
+/* /////////////////////////////////////////////// */
+/* Xóa khóa học */
+.edit_content_sc .edit_delete_content_sc button {
+    text-align: center;
+    cursor: pointer;
+    padding: 1.2px 3px;
+    width: 265px;
+    height: 54px;
+    background-color: #212121;
+    border: 0.96px solid #fff;
+    border-radius: 3.6px;
+    font-size: 12px;
+}
+
+.edit_delete_content_sc button span {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    bottom: 4.8px;
+    width: 258px;
+    height: 47.5px;
+    background-color: #212121;
+    border-radius: 2.4px;
+    font-size: 18px;
+    color: #fff;
+    border: 0.96px solid #fff;
+    box-shadow: 0 4.8px 1.2px 0.228px #fff;
+}
+
+.edit_delete_content_sc button span:hover {
+    transition: all 0.3s;
+    transform: translate(0, 4.8px);
+    box-shadow: 0 0 0 0 #fff;
+}
+
+.edit_delete_content_sc button span:not(hover) {
+    transition: all 0.5s;
+}
+
+/* ///////////////////////////////////////////// */
+
+/* Mở đăng ký khóa học */
+.header_sc .edit_content_sc .edit_open_register_sc {
+    /* background-color: #fff; */
+    margin-right: 40px;
+}
+
+.edit_content_sc .edit_open_register_sc button {
+    text-align: center;
+    cursor: pointer;
+    padding: 1.2px 3px;
+    width: 216px;
+    height: 54px;
+    background-color: #212121;
+    border: 0.96px solid #fff;
+    border-radius: 3.6px;
+    font-size: 12px;
+}
+
+.edit_open_register_sc button span {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    bottom: 4.8px;
+    width: 210px;
+    height: 47.5px;
+    background-color: #212121;
+    border-radius: 2.4px;
+    font-size: 18px;
+    color: #fff;
+    border: 0.96px solid #fff;
+    box-shadow: 0 4.8px 1.2px 0.228px #fff;
+}
+
+.edit_open_register_sc button span:hover {
+    transition: all 0.3s;
+    transform: translate(0, 4.8px);
+    box-shadow: 0 0 0 0 #fff;
+}
+
+.edit_open_register_sc button span:not(hover) {
+    transition: all 0.5s;
+}
+
+/* //////////////////////////////////////////// */
+.header_sc .edit_content_sc .b_edit_content_sc {
+    display: grid;
+    grid-template-columns: 3fr 17fr;
+    margin-left: 40px;
+    margin-right: 40px;
+}
+/* Tìm kiếm */
+.edit_content_sc .search_mskh button {
+    text-align: center;
+    cursor: pointer;
+    padding: 1.2px 3px;
+    width: 209px;
+    height: 65px;
+    background-color: #212121;
+    border: 0.96px solid #fff;
+    border-radius: 3.6px;
+    font-size: 12px;
+}
+
+.search_mskh button span {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    bottom: 4.8px;
+    width: 202px;
+    height: 57px;
+    background-color: #212121;
+    border-radius: 2.4px;
+    font-size: 18px;
+    color: #fff;
+    border: 0.96px solid #fff;
+    box-shadow: 0 4.8px 1.2px 0.228px #fff;
+}
+
+.search_mskh button span:hover {
+    transition: all 0.3s;
+    transform: translate(0, 4.8px);
+    box-shadow: 0 0 0 0 #fff;
+}
+
+.search_mskh button span:not(hover) {
+    transition: all 0.5s;
+}
+
+/* .edit_content_sc .b_edit_content_sc .search_mskh {
+    background-color: #fff;
+} */
+
+/* ////////////////////////////////////////////// */
+
+#container .container_sc {
+    width: 100%;
+    height: auto;
+    background-color: #ffffff;
+
+} 
+/* Table trong content_sc */
+.content_sc .container_sc table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.container_sc table th, .container_sc table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+}
+
+.container_sc table th {
+    background-color: #00cd33;
+}
+/* //////////////////////////// */
+/* -------------Modal add new sc----------- */
+.modal_add_new_sc {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: grid;
+    grid-template-rows: 1fr 5fr 1fr;
+    overflow: auto;
+    display: none;
+}
+.modal_add_new_sc .outside_form_add_new_sc {
+    display: grid;
+    grid-template-columns: 1fr 3fr 1fr; /* Chỗ này responsive được*/
+}
+.modal_add_new_sc .form_add_new_sc {
+    background-color: #fff;
+    display: grid;
+    grid-template-rows: 1fr 10fr;
+    margin: 20px;
+    padding: 5px;
+}
+
+.form_add_new_sc .exit_add_sc {
+    background-color: #00cd33;
+    display: grid;
+    grid-template-columns: 18fr 1fr;
+    gap: 20px;
+    /* padding-bottom: 10px; */
+}
+
+.form_add_new_sc .exit_add_sc .outside_icon_exit_add_new_sc {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    height: 100%;
+    aspect-ratio: 1/1;
+}
+
+.exit_add_sc .outside_icon_exit_add_new_sc:hover {
+    background-color: red;
+    color: #fff;
+}
+
+.form_add_new_sc .content_add_new_sc {
+    display: grid;
+    grid-template-rows: 1fr 2fr 1fr;
+}
+.add_new_sc_mskh_and_mt {
+    background-color: #ffffff;
+    display: grid;
+    grid-template-columns: 2fr 3fr;
+    padding-top: 5px;
+}
+.add_new_sc_mskh_and_mt .add_new_sc_mskh {
+    background-color: #fff;
+    font-weight: bold;
+}
+.add_new_sc_mskh_and_mt .add_new_sc_mskh input {
+    margin-top: 10px;
+    padding: 20px 0px;
+    text-align: center;
+    align-items: center;
+}
+
+.add_new_sc_mskh_and_mt .add_new_sc_mt {
+    font-weight: bold;
+    background-color: #fff;
+}
+.add_new_sc_mskh_and_mt .add_new_sc_mt input {
+    margin-top: 10px;
+    padding: 20px 10px 20px 0px;
+    text-align: center;
+    align-items: center;
+}
+/*  */
+.content_add_new_sc .add_new_sc_describe {
+    font-weight: bold;
+    background-color: rgb(255, 255, 255);
+}
+
+.content_add_new_sc .add_new_sc_describe textarea {
+    margin-top: 10px;
+    width: 99%;
+    height: 80%;
+}
+
+.content_add_new_sc .select_add_new_sc {
+    display: grid;
+    grid-template-columns: 5fr 1fr;
+}
+
+.content_add_new_sc .select_add_new_sc .select_add_new_sc_yes {
+    background-color: #00cd33;
+    height: 80px;
+    width: 80px;
+    border-radius: 80px;
+    float: right;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+.content_add_new_sc .select_add_new_sc .select_add_new_sc_no {
+    background-color: red;
+    height: 80px;
+    width: 80px;
+    border-radius: 80px;
+    float: right;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+
+
+/* -------------Modal add new sc----------- */
+
+
+/* -------------Modal delete select sc----------- */
+
+.modal_delete_select_sc {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: grid;
+    grid-template-rows: 3fr 3fr 3fr;
+    overflow: auto;
+    display: none;
+}
+
+.modal_delete_select_sc .outside_form_delete_select_sc {
+    display: grid;
+    grid-template-columns: 2fr 2fr 2fr; /*Dùng responsive*/
+}
+
+.modal_delete_select_sc .outside_form_delete_select_sc .form_delete_select_sc {
+    background-color: #fff;
+    display: grid;
+    grid-template-rows: 2fr 1fr; 
+    border-radius: 50px;
+}
+
+.outside_form_delete_select_sc .form_delete_select_sc .content_form_delete_select_sc {
+    margin: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #0089cd;
+    border-radius: 50px;
+}
+
+.select_form_delete_select_sc {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin: 0 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.form_delete_select_sc_no {
+    height: 50px;
+    width: 50px;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: red;
+    cursor: pointer;
+}
+
+.form_delete_select_sc_yes {
+    height: 50px;
+    width: 50px;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #00cd33;
+    float: right;
+    cursor: pointer;
+}
+
+/* -------------Modal delete select sc----------- */
+
+
+/* -------------modal_edit_open_register_sc-------- */
+
+/* -------------modal_edit_open_register_sc-------- */
+
+.modal_edit_open_register_sc {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: grid;
+    grid-template-rows: 2fr 4fr 2fr;
+    display: none;
+}
+
+.outside_form_edit_open_register_sc {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+}
+
+.outside_form_edit_open_register_sc .form_edit_open_register_sc {
+    background-color:yellow;
+    display: grid;
+    grid-template-rows: 0.5fr 3fr 0.5fr;
+}
+
+.outside_form_edit_open_register_sc .form_edit_open_register_sc .header_form_edit_open_register_sc {
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+}
+.header_form_edit_open_register_sc span {
+    flex: 1;
+    text-align: center; 
+}
+.form_edit_open_register_sc .header_form_edit_open_register_sc .outside_icon_exit_form_register_sc {
+    float: right;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    aspect-ratio: 1/1;
+    cursor: pointer;
+}
+.form_edit_open_register_sc .header_form_edit_open_register_sc .outside_icon_exit_form_register_sc:hover {
+    background-color: red;
+    color: #fff;
+}
+.outside_form_edit_open_register_sc .form_edit_open_register_sc .t_form_edit_open_register_sc {
+    background-color: #00cd33;
+}
+
+.form_edit_open_register_sc .t_form_edit_open_register_sc .start_end_register {
+    margin-top: 30px;
+    margin-bottom: 50px;
+}
+
+.outside_form_edit_open_register_sc .form_edit_open_register_sc .t_form_edit_open_register_sc {
+    background-color: aquamarine;
+}
+
+.form_edit_open_register_sc .b_form_edit_open_register_sc .outside_icon_yes_form_register_sc {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    aspect-ratio: 1/1;
+    float: right;
+    cursor: pointer;
+    background-color: #00cd33;
+    color: #fff;
+}
+
+.form_edit_open_register_sc .b_form_edit_open_register_sc .outside_icon_yes_form_register_sc:hover {
+    opacity: 0.9;
+    color: #000;
+}
+
+/* -------------modal_edit_open_register_sc-------- */
+
+
+/* --------------------Detail sc------------------- */
+
+/* ---------------Header detail sc----------------- */
+.outside_modal_detail_sc {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    overflow: auto;
+    display: block;
+    display: none;
+}
+
+.outside_modal_detail_sc .icon_exit_detail_sc {
+    height: 80px;
+    width: 80px;
+    /* background-color: #fff; */
+    position: absolute;
+    right: 1%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    cursor: pointer;
+}
+.outside_modal_detail_sc .icon_exit_detail_sc:hover {
+    background-color: red;
+    color: #fff;
+}
+.outside_modal_detail_sc .modal_detail_sc {
+    height: 100%;
+    width: 98%;
+    background-color: #fff;
+    position: absolute;
+    top: 80px;
+    left: 1%;
+    overflow: auto;
+}
+
+.outside_modal_detail_sc .modal_detail_sc .header_detail_sc {
+    position: relative;
+    height: 80px;
+    background-color: #0089cd;
+    display: grid;
+    grid-template-columns: 80px 8fr 80px;
+    margin-bottom: 30px;
+}
+
+.modal_detail_sc .header_detail_sc .header_detail_sc_mskh {
+    height: 100%;
+    aspect-ratio: 1/1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal_detail_sc .header_detail_sc .header_detail_sc_name {
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal_detail_sc .header_detail_sc .header_detail_sc_image {
+    border-radius: 80px;
+    cursor: pointer;
+}
+.header_detail_sc .header_detail_sc_image img {
+    width: 100%;
+    height: 100%;
+    border-radius: 80px;
+}
+
+.header_detail_sc .header_detail_sc_image .header_detail_sc_image_edit {
+    width: 100px;
+    height: 40px;
+    background-color: #fff;
+    position: absolute;
+    top: 80px;
+    right: 0;
+    box-shadow: 2px 2px 2px 2px #000;
+    display: flex;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    
+}
+.header_detail_sc .header_detail_sc_image .header_detail_sc_image_edit:hover,
+.header_detail_sc .header_detail_sc_image .header_detail_sc_exit:hover{
+    background-color: #0089cd;
+}
+.header_detail_sc .header_detail_sc_image .header_detail_sc_exit {
+    width: 100px;
+    height: 40px;
+    background-color: #fff;
+    position: absolute;
+    top: 120px;
+    right: 0;
+    box-shadow: 2px 2px 2px 2px #000;
+    display: flex;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+/* ---------------Header detail sc----------------- */
+
+/* --------------------detail_sc_mt------------------- */
+
+.modal_detail_sc .detail_sc_mt {
+    height: 40px;
+    display: flex;
+    flex-direction: row;
+    padding-left: 5px;
+}
+
+.modal_detail_sc .detail_sc_mt .detail_sc_mt_name {
+    height: 40px;
+    width: 120px;
+    background-color: #2AB69D;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.modal_detail_sc .detail_sc_mt .detail_sc_mt_button {
+    height: 40px;
+    width: 40px;
+    margin-left: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.detail_sc_mt .detail_sc_mt_button button {
+    height: 100%;
+    width: 100%;
+    background-color: #2AB69D;
+    cursor: pointer;
+
+}
+
+.modal_detail_sc #detail_text_mt_sc {
+    display: inline;
+    height: auto;
+    width: 98%;
+    margin: 10px 10px;
+    resize: none;
+    overflow: hidden;
+    white-space: pre-wrap;
+}
+
+/* --------------------detail_sc_mt------------------- */
+
+/* ----------------detail_sc_teacher------------------ */
+.modal_detail_sc .detail_sc_teacher {
+    height: 40px;
+    display: flex;
+    flex-direction: row;
+    padding-left: 5px;
+}
+
+.modal_detail_sc .detail_sc_teacher .detail_sc_teacher_name {
+    height: 40px;
+    width: 120px;
+    background-color: #2AB69D;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.modal_detail_sc .detail_sc_teacher .detail_sc_teacher_button {
+    height: 40px;
+    width: 40px;
+    margin-left: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.detail_sc_teacher .detail_sc_teacher_button button {
+    height: 100%;
+    width: 100%;
+    background-color: #2AB69D;
+    cursor: pointer;
+
+}
+
+/* .modal_detail_sc #detail_text_teacher_sc {
+    width: 98%;
+    margin: 10px 10px;
+    resize: none;
+    overflow: hidden;
+} */
+
+/* Table trong detail_sc_teacher */
+.modal_detail_sc table {
+    border-collapse: collapse;
+    width: 98%;
+    margin: 10px;
+}
+
+.modal_detail_sc table th, .modal_detail_sc table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+}
+
+.modal_detail_sc table th {
+    background-color: #10e2e2;
+}
+/* //////////////////////////// */
+
+/* ----------------detail_sc_teacher------------------ */
+
+/* ----------------detail_sc_outline------------------ */
+
+.modal_detail_sc .detail_sc_outline {
+    height: 40px;
+    display: flex;
+    flex-direction: row;
+    padding-left: 5px;
+}
+
+.modal_detail_sc .detail_sc_outline .detail_sc_outline_name {
+    height: 40px;
+    width: 120px;
+    background-color: #2AB69D;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.modal_detail_sc .detail_sc_outline .detail_sc_outline_button {
+    height: 40px;
+    width: 40px;
+    margin-left: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.detail_sc_outline .detail_sc_outline_button button {
+    height: 100%;
+    width: 100%;
+    background-color: #2AB69D;
+    cursor: pointer;
+
+}
+
+
+/* ----------------detail_sc_outline------------------ */
+
+/* ----------------detail_sc_document----------------- */
+
+.modal_detail_sc .detail_sc_document {
+    height: 40px;
+    display: flex;
+    flex-direction: row;
+    padding-left: 5px;
+}
+
+.modal_detail_sc .detail_sc_document .detail_sc_document_name {
+    height: 40px;
+    width: 120px;
+    background-color: #2AB69D;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.modal_detail_sc .detail_sc_document .detail_sc_document_button {
+    height: 40px;
+    width: 40px;
+    margin-left: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.detail_sc_document .detail_sc_document_button button {
+    height: 100%;
+    width: 100%;
+    background-color: #2AB69D;
+    cursor: pointer;
+
+}
+
+/* ----------------detail_sc_document----------------- */
+
+.folder_detail_sc_document .header_folder_sc_document {
+    height: 50px;
+    background-color: rgb(22, 167, 220);
+    margin: 10px;
+    display: grid;
+    grid-template-columns: 1fr 50px;
+}
+
+.folder_detail_sc_document .header_folder_sc_document .name_folder {
+    margin-left: 10px;
+    height: 50px;
+    
+}
+.header_folder_sc_document .name_folder {
+    padding-top: 15px;
+}
+.folder_detail_sc_document .header_folder_sc_document .icon_folder {
+    height: 50px;
+    width: 50px;
+    float: right;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+/* --------------------Detail sc------------------- */
+
+/* --------------------Footer_detail_sc------------ */
+.footer_detail_sc {
+    /* position: fixed; */
+    /* bottom: 0; */
+    margin-top: 50px;
+    height: 100px;
+    background-color: #0089cd;
+}
+/* --------------------Footer_detail_sc------------ */
+
+/* -------------------modal_detail_sc_image_edit---------- */
+
+.modal_detail_sc_image {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: grid;
+    grid-template-rows: 1fr 80px;
+    display: none;
+}
+
+/* .modal_detail_sc_image .outside_image_sc { */
+    /* overflow: auto; */
+    /* background: url(../img/fullstack.png) center/ cover no-repeat; */
+    /* background: url(../css/styles.css/.header_detail_sc_image); */
+/* } */
+.modal_detail_sc_image .outside_upload_image_sc {
+    /* background-color: #00cd90; */
+    display: grid;
+    grid-template-columns: 80px 1fr 160px 1fr 80px;
+}
+
+.outside_upload_image_sc .no_upload_image_sc {
+    background-color: red;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 40px;
+    cursor: pointer;
+}
+
+.outside_upload_image_sc .upload_image_sc {
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    cursor: pointer;
+}
+.outside_upload_image_sc .upload_image_sc input {
+    display: none;
+}
+.outside_upload_image_sc .yes_upload_image_sc {
+    background-color: rgb(13, 220, 124);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 40px;
+    cursor: pointer;
+}
+
+/* -------------------modal_detail_sc_image_edit---------- */
+
+/* -------------------modal_add_tch_to_sc -----------------*/
+
+.modal_add_tch_to_sc {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: grid;
+    grid-template-rows: 1fr 12fr 1fr;
+    display: none;
+    overflow: auto;
+}
+.modal_add_tch_to_sc .exit_add_tch_to_sc .icon_exit {
+    height: 80px;
+    aspect-ratio: 1/1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    float: right;
+    cursor: pointer;
+    font-size: 40px;
+}
+
+.modal_add_tch_to_sc .exit_add_tch_to_sc .icon_exit:hover {
+    background-color: red;
+}
+.modal_add_tch_to_sc .outside_add_tch_to_sc {
+    display: grid;
+    grid-template-columns: 10px 1fr 12fr 1fr 10px;
+}
+
+.modal_add_tch_to_sc .outside_add_tch_to_sc .add_tch_to_sc {
+    background-color: #fff;
+    display: grid;
+    grid-template-rows: 80px 1fr;
+    overflow: auto;
+
+}
+
+.add_tch_to_sc .header_add_tch_to_sc {
+    background-color: #fff; 
+    display: grid; 
+    grid-template-columns: 1.2fr 2fr 0.1fr;
+}
+
+.outside_select_department_tch_sc {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.outside_select_department_tch_sc input {
+    width: 80%;
+    height: 50%;
+}
+.outside_select_department_tch_sc button {
+    height: 50%;
+    aspect-ratio: 1/1;
+    cursor: pointer;
+}
+.outside_select_department_tch_sc .options_department_tch_sc {
+    width: 80%;
+    background-color: #00f7ff;
+    color: #000;
+    position: absolute;
+    top: 75%;
+    left: calc((20% - 40px)/2);
+    display: none;
+    box-shadow: 0.5px 0.5px 0.5px 0.5px #000000, inset 0.5px 0.5px 0.5px 0.5px #000000;
+    z-index: 1;
+}
+.outside_select_department_tch_sc .options_department_tch_sc li {
+    box-shadow: 0.1px 0.1px 0.1px 0.1px #000000, inset 0.1px 0.1px 0.1px 0.1px #000000;
+}
+.outside_select_department_tch_sc .options_department_tch_sc a {
+    text-decoration: none;
+}
+
+.outside_add_tch_to_sc .main_add_tch_to_sc {
+    display: grid;
+    grid-template-rows: 50px 1fr;
+}
+.outside_add_tch_to_sc .main_add_tch_to_sc button {
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+}
+.outside_add_tch_to_sc .main_add_tch_to_sc .header_main_add_tch_to_sc {
+    background-color: #fff;
+    display: grid;
+    /* grid-template-columns: 1fr 1fr; */
+    /* cursor: pointer; */
+}
+
+.main_add_tch_to_sc .header_main_add_tch_to_sc .list_add_tch_to_sc {
+    background-color: #007bff;
+}
+
+.outside_main_list_add_tch_sc {
+    position: relative;
+    padding: 10px;
+}
+.outside_main_list_add_tch_sc .main_list_add_tch_sc {
+    /* display: none; */
+    position: absolute;
+    top: 34px;
+    left: 1%;
+    width: 98%;
+}
+
+.outside_main_list_add_tch_sc .main_list_added_tch_sc {
+    display: none;
+    position: absolute;
+    top: 34px;
+    left: 1%;
+    width: 98%;
+}
+.outside_main_list_add_tch_sc table th {
+    background-color: #10e2e2;
+}
+table th {
+    background-color: #14a3d6 !important;
+}
+.outside_main_list_add_tch_sc .yes_add_tch_to_sc {
+    background-color: #12a3c7;
+    height: 80px;
+    aspect-ratio: 1/1;
+    border-radius: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    cursor: pointer;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+.outside_main_list_add_tch_sc .yes_add_tch_to_sc:hover {
+    color: #fff;
+    opacity: 0.5;
+}
+/* -------------------modal_add_tch_to_sc -----------------*/
+
+
+
+
+.header_main_add_tch_to_sc button {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    outline: none;
+    border: 0;
+    vertical-align: middle;
+    text-decoration: none;
+    font-family: inherit;
+    font-size: 15px;
+   }
+   
+button.button_list_tch_sc {
+    font-weight: 600;
+    color: #382b22;
+    text-transform: uppercase;
+    padding: 1.25em 2em;
+    background: #01a3d5;
+    border: 2px solid #b18597;
+    border-radius: 0.75em;
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    -webkit-transition: background 150ms cubic-bezier(0, 0, 0.58, 1), -webkit-transform 150ms cubic-bezier(0, 0, 0.58, 1);
+    transition: transform 150ms cubic-bezier(0, 0, 0.58, 1), background 150ms cubic-bezier(0, 0, 0.58, 1), -webkit-transform 150ms cubic-bezier(0, 0, 0.58, 1);
+   }
+   
+button.button_list_tch_sc::before {
+    position: absolute;
+    content: '';
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #01a3d5;
+    border-radius: inherit;
+    -webkit-box-shadow: 0 0 0 2px #0097e8, 0 0.625em 0 0 #0097e8;
+    box-shadow: 0 0 0 2px #0097e8, 0 0.625em 0 0 #0097e8;
+    -webkit-transform: translate3d(0, 0.75em, -1em);
+    transform: translate3d(0, 0.75em, -1em);
+    transition: transform 150ms cubic-bezier(0, 0, 0.58, 1), box-shadow 150ms cubic-bezier(0, 0, 0.58, 1), -webkit-transform 150ms cubic-bezier(0, 0, 0.58, 1), -webkit-box-shadow 150ms cubic-bezier(0, 0, 0.58, 1);
+   }
+   
+button.button_list_tch_sc:hover {
+    background: #0097e8;
+    -webkit-transform: translate(0, 0.25em);
+    transform: translate(0, 0.25em);
+   }
+   
+button.button_list_tch_sc:hover::before {
+    -webkit-box-shadow: 0 0 0 2px #0097e8, 0 0.5em 0 0 #0097e8;
+    box-shadow: 0 0 0 2px #0097e8, 0 0.5em 0 0 #0097e8;
+    -webkit-transform: translate3d(0, 0.5em, -1em);
+    transform: translate3d(0, 0.5em, -1em);
+   }
+   
+button.button_list_tch_sc:active {
+    background: #ffe9e9;
+    -webkit-transform: translate(0em, 0.75em);
+    transform: translate(0em, 0.75em);
+   }
+   
+button.button_list_tch_sc:active::before {
+    -webkit-box-shadow: 0 0 0 2px #b18597, 0 0 #0097e8;
+    box-shadow: 0 0 0 2px #b18597, 0 0 #0097e8;
+    -webkit-transform: translate3d(0, 0, -1em);
+    transform: translate3d(0, 0, -1em);
+}
+
+/* ------------------button_list_added_tch_to_sc------------------ */
+/* button.button_list_added_tch_to_sc {
+    font-weight: 600;
+    color: #382b22;
+    text-transform: uppercase;
+    padding: 1.25em 2em;
+    background: #fff0f0;
+    border: 2px solid #b18597;
+    border-radius: 0.75em;
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    -webkit-transition: background 150ms cubic-bezier(0, 0, 0.58, 1), -webkit-transform 150ms cubic-bezier(0, 0, 0.58, 1);
+    transition: transform 150ms cubic-bezier(0, 0, 0.58, 1), background 150ms cubic-bezier(0, 0, 0.58, 1), -webkit-transform 150ms cubic-bezier(0, 0, 0.58, 1);
+   }
+   
+button.button_list_added_tch_to_sc::before {
+    position: absolute;
+    content: '';
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #01a3d5;
+    border-radius: inherit;
+    -webkit-box-shadow: 0 0 0 2px #0097e8, 0 0.625em 0 0 #0097e8;
+    box-shadow: 0 0 0 2px #0097e8, 0 0.625em 0 0 #0097e8;
+    -webkit-transform: translate3d(0, 0.75em, -1em);
+    transform: translate3d(0, 0.75em, -1em);
+    transition: transform 150ms cubic-bezier(0, 0, 0.58, 1), box-shadow 150ms cubic-bezier(0, 0, 0.58, 1), -webkit-transform 150ms cubic-bezier(0, 0, 0.58, 1), -webkit-box-shadow 150ms cubic-bezier(0, 0, 0.58, 1);
+   }
+   
+button.button_list_added_tch_to_sc:hover {
+    background: #0097e8;
+    -webkit-transform: translate(0, 0.25em);
+    transform: translate(0, 0.25em);
+   }
+   
+button.button_list_added_tch_to_sc:hover::before {
+    -webkit-box-shadow: 0 0 0 2px #0097e8, 0 0.5em 0 0 #0097e8;
+    box-shadow: 0 0 0 2px #0097e8, 0 0.5em 0 0 #0097e8;
+    -webkit-transform: translate3d(0, 0.5em, -1em);
+    transform: translate3d(0, 0.5em, -1em);
+   }
+   
+button.button_list_added_tch_to_sc:active {
+    background: #ffe9e9;
+    -webkit-transform: translate(0em, 0.75em);
+    transform: translate(0em, 0.75em);
+   }
+   
+button.button_list_added_tch_to_sc:active::before {
+    -webkit-box-shadow: 0 0 0 2px #b18597, 0 0 #0097e8;
+    box-shadow: 0 0 0 2px #b18597, 0 0 #0097e8;
+    -webkit-transform: translate3d(0, 0, -1em);
+    transform: translate3d(0, 0, -1em);
+} */
+
+/* ------------------button_list_added_tch_to_sc------------------ */
+
+
+
+/* ------------------content_notion_from_admin-------------------------- */
+
+#container .content_notion_from_admin {
+    height: 100%;
+    width: 98%;
+    background-color: #afadad;
+    /* background: url(../img/book.png) center/ cover no-repeat; */
+    padding: 0px 10px;
+    position: absolute;
+    left: 1%;
+    left: -100%;
+    top: calc(80px + 1%);
+    overflow: auto;
+    overflow-x: hidden;
+    padding: 10px;
+    transition: left 0.3s ease;
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 1), /* Bóng đổ bên trong */
+    0 0 10px rgba(0, 0, 0, 0.5);      /* Bóng đổ bên ngoài */
+    z-index: 0;
+}
+
+.content_notion_from_admin .exit_notion_from_admin {
+    height: 80px;
+    aspect-ratio: 1/1;
+    font-size: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    float: right;
+    cursor: pointer;
+}
+.content_notion_from_admin .exit_notion_from_admin:hover {
+    background-color: red;
+}
+
+/* ------------------modal_ouside_notion-------------------------- */
+
+
+
+/* -------------------------Begin: Quản lí khóa học------------------ */
+.modal_detailAllSc_std_tch {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: grid;
+    grid-template-rows: 1fr 8fr 1fr;
+    display: none;   
+
+}
+.modal_detailAllSc_std_tch .main_detailAllSc_std_tch {
+    background-color: white;
+    display: grid;
+    grid-template-rows: 80px 1fr; 
+}
+.exit_deltail_sc_std_tch:hover {
+    background-color: red;
+    color: #000;
+    cursor: pointer;
+}
+
+.exit_add_sc_std_tch:hover {
+    background-color: red;
+    color: #000;
+    cursor: pointer;
+}
+.main_add_std_to_sc {
+    background-color: white;
+    display: grid;
+    grid-template-rows: 80px 1fr; 
+}
+
+.modal_add_std_to_sc {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: grid;
+    grid-template-rows: 1fr 8fr 1fr;
+    display: none;
+}
