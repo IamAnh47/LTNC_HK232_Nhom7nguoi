@@ -1,0 +1,1525 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+	<link rel="stylesheet" href="./assets/calendar.css" />
+	<link rel=" stylesheet" href="./assets/style.css" />
+	<link rel="stylesheet" href="./assets/font/themify-icons-font/themify-icons/themify-icons.css" />
+	<title>SinhVien</title>
+</head>
+
+<body>
+	<div class="main-container d-flex justify-content-between">
+		<!-- Left Layout -->
+		<div class="sidebar vh-100 d-none d-sm-none d-md-none d-xl-flex">
+			<div class="sidebar_top-content">
+				<div class="sidebar_logo-wrapper p-2 d-flex align-items-center">
+					<img src="./assets/img/logo.png" alt="" sizes="" srcset="" class="logo-img" />
+					<div class="sidebar_edu-name">Harvard University</div>
+				</div>
+
+				<div class="sidebar_menu-wrapper">
+					<a href="./index.html" aria-hidden class="">
+						<div id="" class="sidebar_menu-item">Dashboard</div>
+					</a>
+					<a href="#main_course-container" aria-hidden class="">
+						<div class="sidebar_menu-item">My courses</div>
+					</a>
+					<a href="#main_activities-container" aria-hidden class="">
+						<div class="sidebar_menu-item">Schedule</div>
+					</a>
+				</div>
+			</div>
+			<div class="sidebar_bottom-content show-panel">
+				<img src="./assets/img/avatar.png" alt="" sizes="" srcset="" class="avatar-img" />
+				<div class="sidebar_user-info-wrapper">
+					<div style="color: #cbd5e1">Welcome back</div>
+					<div class="sidebar_username">MOIDADEN</div>
+				</div>
+				<i class="bi bi-chevron-up"></i>
+				<div class="sidebar_bottom-panel show" style="height: 250px;">
+					<div class="sidebar_bottom-panel-title">
+						Bachelor of Computer Science
+					</div>
+					<div class="sidebar_bottom-panel-menu-wrapper pt-4">
+						<a href="./Information.html">
+							<div class="sidebar_bottom-panel-item">Information</div>
+						</a>
+						<div class="sidebar_bottom-panel-item">Grades</div>
+						<a href="./Login.html">
+							<div class="sidebar_bottom-panel-item">Log out</div>
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- Main Layout -->
+		<div class="main flex-grow-1">
+			<div class="main_infomation-container">
+				<div class="main_infomation-header title-heading mb-2">Course Registration</div>
+				<div class="box box-primary">
+				</div>
+
+				<div class="box-body">
+
+					<div class="row">
+						<div class="col-md-12">
+							<div class="input-group input-group-sm">
+								<input name="msmh" class="form-control" id="txtMSMHSearch"
+									placeholder="Mã môn học/Tên môn học">
+								<span class="input-group-btn">
+									<button id="btnMSMHSearch" type="button" onclick="searchMonHocDangKy();"
+										class="btn btn-primary btn-flat">
+										<i class="bi bi-search" aria-hidden="true"></i>
+									</button>
+								</span>
+
+							</div>
+							<input class="pointer hide" type="button" value="Xoá tìm kiếm"
+								onclick="jQuery('#txtMSMHSearch').val(''); searchMonHocDangKy();">
+							<br>
+
+						</div>
+						<!--
+<div class='col-md-12'>
+	<div class="input-group input-group-sm">
+		<input name="mhavail" type="checkbox" id="checkMHAvail" onclick="showAvailOnly();" unchecked>
+		&nbsp;
+		<label for="checkMHAvail" class='text-blue'">
+		Chỉ hiển thị các lớp môn học còn trống chỗ
+		</label>
+	</div>
+</div>
+-->
+						<div class="col-md-12">
+						</div>
+						<div class="col-md-12" id="divMonHocDangKyListResponse">
+
+							<div class="" id="divMonHocMoLopResponse" style="height: 350px;overflow:auto;">
+
+								<table id="tblMonHocMoLop" class="table table-condensed table">
+									<tbody>
+										<tr class="active" style="display: table-row;">
+											<th class="" width="15px">STT</th>
+											<th class="" width="15px"></th>
+											<th class=" ">Mã MH</th>
+											<th class=" ">Tên MH </th>
+											<th class=" ">Số tín chỉ</th>
+
+											<th class=" ">BB/TC</th>
+											<th class="" width="15px"></th>
+										</tr>
+
+										<tr id="monHoc14076" onclick="getThongTinNhomLopMonHoc(this, 14076)">
+
+
+											<td class="item_list">1 </td>
+											<td class="item_list">
+
+												<label class="text-blue"><i class="fa " aria-hidden="true"></i></label>
+
+											</td>
+											<td class="item_list">CO2001 </td>
+											<td class="item_list">Kỹnăng chnghiệp cho kỹsư</td>
+											<td class="item_list">3.0</td>
+											<td class="item_list">
+										<tr class="even  detail mh-not-avail-detail mh-not-avail-detail-show"
+											style="display: table-row;">
+
+											<td colspan="7">
+												<div id="divTKBMonHoc14076" class="p-loading-element-mask"
+													style="min-height: 50px;">
+													<div class="panel panel-default">
+														<div class="panel-heading">
+															<h4 class="panel-title">
+																CO2001 - Kỹnăng chnghiệp cho kỹsư
+															</h4>
+														</div>
+
+														<div class="panel-body panel-collapse collapse-in">
+															<div class="row">
+																<div class="col-md-12">
+																	<table width="100%" id="tkbLT14076"
+																		class="gridTable">
+																		<thead>
+																			<tr>
+																				<th class="title">Nhóm lớp</th>
+																				<th class="title">DK/ Sĩ số</th>
+
+																				<th class="title">Ngôn ngữ</th>
+																				<th class="title">Nhóm LT</th>
+																				<th class="title">Giảng viên</th>
+																				<th class="title">Nhóm BT</th>
+																				<th class="title">Giảng viên BT/TN</th>
+																				<th class="title">Sĩ số LT</th>
+																				<th class="title">#</th>
+																			</tr>
+																		</thead>
+
+																		<tbody>
+																			<tr>
+																				<td class="item_list" colspan="9">
+																					<hr>
+																				</td>
+																			</tr>
+
+
+
+
+
+
+
+
+																			<tr style="border-bottom:2px #ccc  solid;">
+																				<td class="item_list">N1-- </td>
+																				<td class="item_list">15/9999 </td>
+																				<td class="item_list">V </td>
+																				<td class="item_list">N1-- </td>
+																				<td class="item_list"> </td>
+																				<td class="item_list"> </td>
+																				<td class="item_list"> </td>
+																				<td class="item_list">9999 </td>
+																				<td class="item_list">
+
+																					<button type="button"
+																						group="input14076"
+																						onclick="dangKyNhomLopMonHoc(this, 1291631, 14076);"
+																						class="btn btn-block btn-primary btn-xs pull-right">
+																						Chọn
+																					</button>
+																					<label
+																						class="text-blue pull-right"><i
+																							class="fa "
+																							aria-hidden="true"></i></label>
+
+
+																				</td>
+																			</tr>
+
+																			<tr>
+																				<td class="item_list"></td>
+																				<td class="item_list" colspan="7">
+																					<!-- dungBuoiTraiBuoi
+		"DB--": Chi? mo+? ddu'ng buo^?i cu?a he^. dda`o ta.o
+		"TB--": Chi? mo+? tra'i buo^?i cu?a he^. dda`o ta.o
+		"DBTB": U+u tie^n mo+? ddu'ng buo^?i tru+o+'c, sau ddo' mo+'i mo+? tra'i buo^?i
+		"TBDB": U+u tie^n mo+? tra'i buo^?i tru+o+'c, sau ddo' mo+'i mo+? ddu'ng buo^?i
+		 -->
+																					<!-- hie^?n thi. Thu+' Tie^'t Pho`ng -->
+
+																					<table width="100%" class="table">
+																						<tbody>
+																							<tr
+																								style="border-bottom:2px #ccc  solid;">
+																								<th><em>Thứ</em></th>
+																								<th><em>Tiết</em></th>
+																								<th><em>Phòng</em></th>
+																								<th><em>CS</em></th>
+																								<th><em>BT/TN</em></th>
+																								<th><em>Tuần học</em>
+																								</th>
+																							</tr>
+
+
+																							<tr class="">
+
+																								<td class="item_list">
+																									Chưa biết </td>
+																								<td class="item_list">
+
+																									--
+																								</td>
+
+																								<td class="item_list">
+																								</td>
+																								<td class="item_list">
+																									DKNV </td>
+																								<td class="item_list">
+																								</td>
+																								<td class="item_list">
+
+																									1234567890123456--------------
+
+																								</td>
+
+
+																							</tr>
+																							<!--end foreach tkbChiTiet-->
+																						</tbody>
+																					</table>
+
+																					<!-- dungBuoiTraiBuoi -->
+
+																				</td>
+																				<td class="item_list"></td>
+																			</tr>
+
+																			<tr>
+																				<td class="item_list" colspan="9">
+																					<hr>
+																				</td>
+																			</tr>
+
+
+
+																			<tr style="border-bottom:2px #ccc  solid;">
+																				<td class="item_list">N12- </td>
+																				<td class="item_list">0/9999 </td>
+																				<td class="item_list">V </td>
+																				<td class="item_list">N12- </td>
+																				<td class="item_list"> </td>
+																				<td class="item_list"> </td>
+																				<td class="item_list"> </td>
+																				<td class="item_list">9999 </td>
+																				<td class="item_list">
+
+																					<button type="button"
+																						group="input14076"
+																						onclick="dangKyNhomLopMonHoc(this, 1291632, 14076);"
+																						class="btn btn-block btn-primary btn-xs pull-right">
+																						Chọn
+																					</button>
+																					<label
+																						class="text-blue pull-right"><i
+																							class="fa "
+																							aria-hidden="true"></i></label>
+
+
+																				</td>
+																			</tr>
+
+																			<tr>
+																				<td class="item_list"></td>
+																				<td class="item_list" colspan="7">
+																					<!-- dungBuoiTraiBuoi
+		"DB--": Chi? mo+? ddu'ng buo^?i cu?a he^. dda`o ta.o
+		"TB--": Chi? mo+? tra'i buo^?i cu?a he^. dda`o ta.o
+		"DBTB": U+u tie^n mo+? ddu'ng buo^?i tru+o+'c, sau ddo' mo+'i mo+? tra'i buo^?i
+		"TBDB": U+u tie^n mo+? tra'i buo^?i tru+o+'c, sau ddo' mo+'i mo+? ddu'ng buo^?i
+		 -->
+																					<!-- hie^?n thi. Thu+' Tie^'t Pho`ng -->
+
+																					<table width="100%" class="table">
+																						<tbody>
+																							<tr
+																								style="border-bottom:2px #ccc  solid;">
+																								<th><em>Thứ</em></th>
+																								<th><em>Tiết</em></th>
+																								<th><em>Phòng</em></th>
+																								<th><em>CS</em></th>
+																								<th><em>BT/TN</em></th>
+																								<th><em>Tuần học</em>
+																								</th>
+																							</tr>
+
+
+																							<tr class="">
+
+																								<td class="item_list">
+																									Chưa biết </td>
+																								<td class="item_list">
+
+																									--
+																								</td>
+
+																								<td class="item_list">
+																								</td>
+																								<td class="item_list">
+																									DKNV </td>
+																								<td class="item_list">
+																								</td>
+																								<td class="item_list">
+
+																									1234567890123456--------------
+
+																								</td>
+
+
+																							</tr>
+																							<!--end foreach tkbChiTiet-->
+																						</tbody>
+																					</table>
+
+																					<!-- dungBuoiTraiBuoi -->
+
+																				</td>
+																				<td class="item_list"></td>
+																			</tr>
+
+																			<tr>
+																				<td class="item_list" colspan="9">
+																					<hr>
+																				</td>
+																			</tr>
+
+
+
+																			<tr style="border-bottom:2px #ccc  solid;">
+																				<td class="item_list">N2-- </td>
+																				<td class="item_list">15/9999 </td>
+																				<td class="item_list">V </td>
+																				<td class="item_list">N2-- </td>
+																				<td class="item_list"> </td>
+																				<td class="item_list"> </td>
+																				<td class="item_list"> </td>
+																				<td class="item_list">9999 </td>
+																				<td class="item_list">
+
+																					<button type="button"
+																						group="input14076"
+																						onclick="dangKyNhomLopMonHoc(this, 1291633, 14076);"
+																						class="btn btn-block btn-primary btn-xs pull-right">
+																						Chọn
+																					</button>
+																					<label
+																						class="text-blue pull-right"><i
+																							class="fa "
+																							aria-hidden="true"></i></label>
+
+
+																				</td>
+																			</tr>
+
+																			<tr>
+																				<td class="item_list"></td>
+																				<td class="item_list" colspan="7">
+																					<!-- dungBuoiTraiBuoi
+		"DB--": Chi? mo+? ddu'ng buo^?i cu?a he^. dda`o ta.o
+		"TB--": Chi? mo+? tra'i buo^?i cu?a he^. dda`o ta.o
+		"DBTB": U+u tie^n mo+? ddu'ng buo^?i tru+o+'c, sau ddo' mo+'i mo+? tra'i buo^?i
+		"TBDB": U+u tie^n mo+? tra'i buo^?i tru+o+'c, sau ddo' mo+'i mo+? ddu'ng buo^?i
+		 -->
+																					<!-- hie^?n thi. Thu+' Tie^'t Pho`ng -->
+
+																					<table width="100%" class="table">
+																						<tbody>
+																							<tr
+																								style="border-bottom:2px #ccc  solid;">
+																								<th><em>Thứ</em></th>
+																								<th><em>Tiết</em></th>
+																								<th><em>Phòng</em></th>
+																								<th><em>CS</em></th>
+																								<th><em>BT/TN</em></th>
+																								<th><em>Tuần học</em>
+																								</th>
+																							</tr>
+
+
+																							<tr class="">
+
+																								<td class="item_list">
+																									Chưa biết </td>
+																								<td class="item_list">
+
+																									--
+																								</td>
+
+																								<td class="item_list">
+																								</td>
+																								<td class="item_list">
+																									DKNV </td>
+																								<td class="item_list">
+																								</td>
+																								<td class="item_list">
+
+																									1234567890123456--------------
+
+																								</td>
+
+
+																							</tr>
+																							<!--end foreach tkbChiTiet-->
+																						</tbody>
+																					</table>
+
+																					<!-- dungBuoiTraiBuoi -->
+
+																				</td>
+																				<td class="item_list"></td>
+																			</tr>
+
+																			<tr>
+																				<td class="item_list" colspan="9">
+																					<hr>
+																				</td>
+																			</tr>
+
+
+
+																			<tr style="border-bottom:2px #ccc  solid;">
+																				<td class="item_list">N21- </td>
+																				<td class="item_list">0/9999 </td>
+																				<td class="item_list">V </td>
+																				<td class="item_list">N21- </td>
+																				<td class="item_list"> </td>
+																				<td class="item_list"> </td>
+																				<td class="item_list"> </td>
+																				<td class="item_list">9999 </td>
+																				<td class="item_list">
+
+																					<button type="button"
+																						group="input14076"
+																						onclick="dangKyNhomLopMonHoc(this, 1291634, 14076);"
+																						class="btn btn-block btn-primary btn-xs pull-right">
+																						Chọn
+																					</button>
+																					<label
+																						class="text-blue pull-right"><i
+																							class="fa "
+																							aria-hidden="true"></i></label>
+
+
+																				</td>
+																			</tr>
+
+																			<tr>
+																				<td class="item_list"></td>
+																				<td class="item_list" colspan="7">
+																					<!-- dungBuoiTraiBuoi
+		"DB--": Chi? mo+? ddu'ng buo^?i cu?a he^. dda`o ta.o
+		"TB--": Chi? mo+? tra'i buo^?i cu?a he^. dda`o ta.o
+		"DBTB": U+u tie^n mo+? ddu'ng buo^?i tru+o+'c, sau ddo' mo+'i mo+? tra'i buo^?i
+		"TBDB": U+u tie^n mo+? tra'i buo^?i tru+o+'c, sau ddo' mo+'i mo+? ddu'ng buo^?i
+		 -->
+																					<!-- hie^?n thi. Thu+' Tie^'t Pho`ng -->
+
+																					<table width="100%" class="table">
+																						<tbody>
+																							<tr
+																								style="border-bottom:2px #ccc  solid;">
+																								<th><em>Thứ</em></th>
+																								<th><em>Tiết</em></th>
+																								<th><em>Phòng</em></th>
+																								<th><em>CS</em></th>
+																								<th><em>BT/TN</em></th>
+																								<th><em>Tuần học</em>
+																								</th>
+																							</tr>
+
+
+																							<tr class="">
+
+																								<td class="item_list">
+																									Chưa biết </td>
+																								<td class="item_list">
+
+																									--
+																								</td>
+
+																								<td class="item_list">
+																								</td>
+																								<td class="item_list">
+																									DKNV </td>
+																								<td class="item_list">
+																								</td>
+																								<td class="item_list">
+
+																									1234567890123456--------------
+
+																								</td>
+
+
+																							</tr>
+																							<!--end foreach tkbChiTiet-->
+																						</tbody>
+																					</table>
+
+																					<!-- dungBuoiTraiBuoi -->
+
+																				</td>
+																				<td class="item_list"></td>
+																			</tr>
+
+																			<tr>
+																				<td class="item_list" colspan="9">
+																					<hr>
+																				</td>
+																			</tr>
+																			<!--end foreach tkbDuKien-->
+
+																		</tbody>
+																	</table>
+
+
+
+
+
+																</div>
+															</div>
+
+														</div>
+													</div>
+												</div>
+
+											</td>
+										</tr>
+
+
+
+
+
+
+										</td>
+
+										<td class="item_list"><i class="arrow fa pull-right fa-angle-right"></i></td>
+										</tr>
+										<tr class="even  detail" style="display: none;">
+
+											<td colspan="7">
+												<div id="divTKBMonHoc14076" class="p-loading-element-mask"
+													style="min-height: 50px;"></div>
+
+											</td>
+										</tr>
+
+
+										<tr id="monHoc14077" onclick="getThongTinNhomLopMonHoc(this, 14077)">
+
+
+											<td class="item_list">2 </td>
+											<td class="item_list">
+
+												<label class="text-blue"><i class="fa  fa-check "
+														aria-hidden="true"></i></label>
+
+											</td>
+											<td class="item_list">CO2003 </td>
+											<td class="item_list">Ctrúc dữliệu &amp; giảithuật</td>
+											<td class="item_list">4.0</td>
+											<td class="item_list">
+										<tr class="even  detail mh-not-avail-detail mh-not-avail-detail-show"
+											style="display: table-row;">
+
+											<td colspan="7">
+												<div id="divTKBMonHoc14076" class="p-loading-element-mask"
+													style="min-height: 50px;">
+													<div class="panel panel-default">
+														<div class="panel-heading">
+															<h4 class="panel-title">
+																CO2003 - Ctrúc dữliệu
+															</h4>
+														</div>
+
+														<div class="panel-body panel-collapse collapse-in">
+															<div class="row">
+																<div class="col-md-12">
+																	<table width="100%" id="tkbLT14076"
+																		class="gridTable">
+																		<thead>
+																			<tr>
+																				<th class="title">Nhóm lớp</th>
+																				<th class="title">DK/ Sĩ số</th>
+
+																				<th class="title">Ngôn ngữ</th>
+																				<th class="title">Nhóm LT</th>
+																				<th class="title">Giảng viên</th>
+																				<th class="title">Nhóm BT</th>
+																				<th class="title">Giảng viên BT/TN</th>
+																				<th class="title">Sĩ số LT</th>
+																				<th class="title">#</th>
+																			</tr>
+																		</thead>
+
+																		<tbody>
+																			<tr>
+																				<td class="item_list" colspan="9">
+																					<hr>
+																				</td>
+																			</tr>
+
+
+
+
+
+
+
+
+																			<tr style="border-bottom:2px #ccc  solid;">
+																				<td class="item_list">N1-- </td>
+																				<td class="item_list">15/9999 </td>
+																				<td class="item_list">V </td>
+																				<td class="item_list">N1-- </td>
+																				<td class="item_list"> </td>
+																				<td class="item_list"> </td>
+																				<td class="item_list"> </td>
+																				<td class="item_list">9999 </td>
+																				<td class="item_list">
+
+																					<button type="button"
+																						group="input14076"
+																						onclick="dangKyNhomLopMonHoc(this, 1291631, 14076);"
+																						class="btn btn-block btn-primary btn-xs pull-right">
+																						Chọn
+																					</button>
+																					<label
+																						class="text-blue pull-right"><i
+																							class="fa "
+																							aria-hidden="true"></i></label>
+
+
+																				</td>
+																			</tr>
+
+																			<tr>
+																				<td class="item_list"></td>
+																				<td class="item_list" colspan="7">
+																					<!-- dungBuoiTraiBuoi
+		"DB--": Chi? mo+? ddu'ng buo^?i cu?a he^. dda`o ta.o
+		"TB--": Chi? mo+? tra'i buo^?i cu?a he^. dda`o ta.o
+		"DBTB": U+u tie^n mo+? ddu'ng buo^?i tru+o+'c, sau ddo' mo+'i mo+? tra'i buo^?i
+		"TBDB": U+u tie^n mo+? tra'i buo^?i tru+o+'c, sau ddo' mo+'i mo+? ddu'ng buo^?i
+		 -->
+																					<!-- hie^?n thi. Thu+' Tie^'t Pho`ng -->
+
+																					<table width="100%" class="table">
+																						<tbody>
+																							<tr
+																								style="border-bottom:2px #ccc  solid;">
+																								<th><em>Thứ</em></th>
+																								<th><em>Tiết</em></th>
+																								<th><em>Phòng</em></th>
+																								<th><em>CS</em></th>
+																								<th><em>BT/TN</em></th>
+																								<th><em>Tuần học</em>
+																								</th>
+																							</tr>
+
+
+																							<tr class="">
+
+																								<td class="item_list">
+																									Chưa biết </td>
+																								<td class="item_list">
+
+																									--
+																								</td>
+
+																								<td class="item_list">
+																								</td>
+																								<td class="item_list">
+																									DKNV </td>
+																								<td class="item_list">
+																								</td>
+																								<td class="item_list">
+
+																									1234567890123456--------------
+
+																								</td>
+
+
+																							</tr>
+																							<!--end foreach tkbChiTiet-->
+																						</tbody>
+																					</table>
+
+																					<!-- dungBuoiTraiBuoi -->
+
+																				</td>
+																				<td class="item_list"></td>
+																			</tr>
+
+																			<tr>
+																				<td class="item_list" colspan="9">
+																					<hr>
+																				</td>
+																			</tr>
+
+
+
+																			<tr style="border-bottom:2px #ccc  solid;">
+																				<td class="item_list">N12- </td>
+																				<td class="item_list">0/9999 </td>
+																				<td class="item_list">V </td>
+																				<td class="item_list">N12- </td>
+																				<td class="item_list"> </td>
+																				<td class="item_list"> </td>
+																				<td class="item_list"> </td>
+																				<td class="item_list">9999 </td>
+																				<td class="item_list">
+
+																					<button type="button"
+																						group="input14076"
+																						onclick="dangKyNhomLopMonHoc(this, 1291632, 14076);"
+																						class="btn btn-block btn-primary btn-xs pull-right">
+																						Chọn
+																					</button>
+																					<label
+																						class="text-blue pull-right"><i
+																							class="fa "
+																							aria-hidden="true"></i></label>
+
+
+																				</td>
+																			</tr>
+
+																			<tr>
+																				<td class="item_list"></td>
+																				<td class="item_list" colspan="7">
+																					<!-- dungBuoiTraiBuoi
+		"DB--": Chi? mo+? ddu'ng buo^?i cu?a he^. dda`o ta.o
+		"TB--": Chi? mo+? tra'i buo^?i cu?a he^. dda`o ta.o
+		"DBTB": U+u tie^n mo+? ddu'ng buo^?i tru+o+'c, sau ddo' mo+'i mo+? tra'i buo^?i
+		"TBDB": U+u tie^n mo+? tra'i buo^?i tru+o+'c, sau ddo' mo+'i mo+? ddu'ng buo^?i
+		 -->
+																					<!-- hie^?n thi. Thu+' Tie^'t Pho`ng -->
+
+																					<table width="100%" class="table">
+																						<tbody>
+																							<tr
+																								style="border-bottom:2px #ccc  solid;">
+																								<th><em>Thứ</em></th>
+																								<th><em>Tiết</em></th>
+																								<th><em>Phòng</em></th>
+																								<th><em>CS</em></th>
+																								<th><em>BT/TN</em></th>
+																								<th><em>Tuần học</em>
+																								</th>
+																							</tr>
+
+
+																							<tr class="">
+
+																								<td class="item_list">
+																									Chưa biết </td>
+																								<td class="item_list">
+
+																									--
+																								</td>
+
+																								<td class="item_list">
+																								</td>
+																								<td class="item_list">
+																									DKNV </td>
+																								<td class="item_list">
+																								</td>
+																								<td class="item_list">
+
+																									1234567890123456--------------
+
+																								</td>
+
+
+																							</tr>
+																							<!--end foreach tkbChiTiet-->
+																						</tbody>
+																					</table>
+
+																					<!-- dungBuoiTraiBuoi -->
+
+																				</td>
+																				<td class="item_list"></td>
+																			</tr>
+
+																			<tr>
+																				<td class="item_list" colspan="9">
+																					<hr>
+																				</td>
+																			</tr>
+
+
+
+																			<tr style="border-bottom:2px #ccc  solid;">
+																				<td class="item_list">N2-- </td>
+																				<td class="item_list">15/9999 </td>
+																				<td class="item_list">V </td>
+																				<td class="item_list">N2-- </td>
+																				<td class="item_list"> </td>
+																				<td class="item_list"> </td>
+																				<td class="item_list"> </td>
+																				<td class="item_list">9999 </td>
+																				<td class="item_list">
+
+																					<button type="button"
+																						group="input14076"
+																						onclick="dangKyNhomLopMonHoc(this, 1291633, 14076);"
+																						class="btn btn-block btn-primary btn-xs pull-right">
+																						Chọn
+																					</button>
+																					<label
+																						class="text-blue pull-right"><i
+																							class="fa "
+																							aria-hidden="true"></i></label>
+
+
+																				</td>
+																			</tr>
+
+																			<tr>
+																				<td class="item_list"></td>
+																				<td class="item_list" colspan="7">
+																					<!-- dungBuoiTraiBuoi
+		"DB--": Chi? mo+? ddu'ng buo^?i cu?a he^. dda`o ta.o
+		"TB--": Chi? mo+? tra'i buo^?i cu?a he^. dda`o ta.o
+		"DBTB": U+u tie^n mo+? ddu'ng buo^?i tru+o+'c, sau ddo' mo+'i mo+? tra'i buo^?i
+		"TBDB": U+u tie^n mo+? tra'i buo^?i tru+o+'c, sau ddo' mo+'i mo+? ddu'ng buo^?i
+		 -->
+																					<!-- hie^?n thi. Thu+' Tie^'t Pho`ng -->
+
+																					<table width="100%" class="table">
+																						<tbody>
+																							<tr
+																								style="border-bottom:2px #ccc  solid;">
+																								<th><em>Thứ</em></th>
+																								<th><em>Tiết</em></th>
+																								<th><em>Phòng</em></th>
+																								<th><em>CS</em></th>
+																								<th><em>BT/TN</em></th>
+																								<th><em>Tuần học</em>
+																								</th>
+																							</tr>
+
+
+																							<tr class="">
+
+																								<td class="item_list">
+																									Chưa biết </td>
+																								<td class="item_list">
+
+																									--
+																								</td>
+
+																								<td class="item_list">
+																								</td>
+																								<td class="item_list">
+																									DKNV </td>
+																								<td class="item_list">
+																								</td>
+																								<td class="item_list">
+
+																									1234567890123456--------------
+
+																								</td>
+
+
+																							</tr>
+																							<!--end foreach tkbChiTiet-->
+																						</tbody>
+																					</table>
+
+																					<!-- dungBuoiTraiBuoi -->
+
+																				</td>
+																				<td class="item_list"></td>
+																			</tr>
+
+																			<tr>
+																				<td class="item_list" colspan="9">
+																					<hr>
+																				</td>
+																			</tr>
+
+
+
+																			<tr style="border-bottom:2px #ccc  solid;">
+																				<td class="item_list">N21- </td>
+																				<td class="item_list">0/9999 </td>
+																				<td class="item_list">V </td>
+																				<td class="item_list">N21- </td>
+																				<td class="item_list"> </td>
+																				<td class="item_list"> </td>
+																				<td class="item_list"> </td>
+																				<td class="item_list">9999 </td>
+																				<td class="item_list">
+
+																					<button type="button"
+																						group="input14076"
+																						onclick="dangKyNhomLopMonHoc(this, 1291634, 14076);"
+																						class="btn btn-block btn-primary btn-xs pull-right">
+																						Chọn
+																					</button>
+																					<label
+																						class="text-blue pull-right"><i
+																							class="fa "
+																							aria-hidden="true"></i></label>
+
+
+																				</td>
+																			</tr>
+
+																			<tr>
+																				<td class="item_list"></td>
+																				<td class="item_list" colspan="7">
+																					<!-- dungBuoiTraiBuoi
+		"DB--": Chi? mo+? ddu'ng buo^?i cu?a he^. dda`o ta.o
+		"TB--": Chi? mo+? tra'i buo^?i cu?a he^. dda`o ta.o
+		"DBTB": U+u tie^n mo+? ddu'ng buo^?i tru+o+'c, sau ddo' mo+'i mo+? tra'i buo^?i
+		"TBDB": U+u tie^n mo+? tra'i buo^?i tru+o+'c, sau ddo' mo+'i mo+? ddu'ng buo^?i
+		 -->
+																					<!-- hie^?n thi. Thu+' Tie^'t Pho`ng -->
+
+																					<table width="100%" class="table">
+																						<tbody>
+																							<tr
+																								style="border-bottom:2px #ccc  solid;">
+																								<th><em>Thứ</em></th>
+																								<th><em>Tiết</em></th>
+																								<th><em>Phòng</em></th>
+																								<th><em>CS</em></th>
+																								<th><em>BT/TN</em></th>
+																								<th><em>Tuần học</em>
+																								</th>
+																							</tr>
+
+
+																							<tr class="">
+
+																								<td class="item_list">
+																									Chưa biết </td>
+																								<td class="item_list">
+
+																									--
+																								</td>
+
+																								<td class="item_list">
+																								</td>
+																								<td class="item_list">
+																									DKNV </td>
+																								<td class="item_list">
+																								</td>
+																								<td class="item_list">
+
+																									1234567890123456--------------
+
+																								</td>
+
+
+																							</tr>
+																							<!--end foreach tkbChiTiet-->
+																						</tbody>
+																					</table>
+
+																					<!-- dungBuoiTraiBuoi -->
+
+																				</td>
+																				<td class="item_list"></td>
+																			</tr>
+
+																			<tr>
+																				<td class="item_list" colspan="9">
+																					<hr>
+																				</td>
+																			</tr>
+																			<!--end foreach tkbDuKien-->
+
+																		</tbody>
+																	</table>
+
+
+
+
+
+																</div>
+															</div>
+
+														</div>
+													</div>
+												</div>
+
+											</td>
+										</tr>
+
+
+
+
+
+
+										</td>
+
+										<td class="item_list"><i class="arrow fa pull-right fa-angle-right"></i></td>
+										</tr>
+										<tr class="even  detail" style="display: none;">
+
+											<td colspan="7">
+												<div id="divTKBMonHoc14076" class="p-loading-element-mask"
+													style="min-height: 50px;"></div>
+
+											</td>
+										</tr>
+
+
+										<tr id="monHoc14079" onclick="getThongTinNhomLopMonHoc(this, 14079)">
+
+
+											<td class="item_list">3 </td>
+											<td class="item_list">
+
+												<label class="text-blue"><i class="fa  fa-check "
+														aria-hidden="true"></i></label>
+
+											</td>
+											<td class="item_list">CO2005 </td>
+											<td class="item_list">Lập trình hướng đốitượng</td>
+											<td class="item_list">4.0</td>
+											<td class="item_list">
+										<tr class="even  detail mh-not-avail-detail mh-not-avail-detail-show"
+											style="display: table-row;">
+
+											<td colspan="7">
+												<div id="divTKBMonHoc14076" class="p-loading-element-mask"
+													style="min-height: 50px;">
+													<div class="panel panel-default">
+														<div class="panel-heading">
+															<h4 class="panel-title">
+																CO2005 - Lập trình hướng đốitượng
+															</h4>
+														</div>
+
+														<div class="panel-body panel-collapse collapse-in">
+															<div class="row">
+																<div class="col-md-12">
+																	<table width="100%" id="tkbLT14076"
+																		class="gridTable">
+																		<thead>
+																			<tr>
+																				<th class="title">Nhóm lớp</th>
+																				<th class="title">DK/ Sĩ số</th>
+
+																				<th class="title">Ngôn ngữ</th>
+																				<th class="title">Nhóm LT</th>
+																				<th class="title">Giảng viên</th>
+																				<th class="title">Nhóm BT</th>
+																				<th class="title">Giảng viên BT/TN</th>
+																				<th class="title">Sĩ số LT</th>
+																				<th class="title">#</th>
+																			</tr>
+																		</thead>
+
+																		<tbody>
+																			<tr>
+																				<td class="item_list" colspan="9">
+																					<hr>
+																				</td>
+																			</tr>
+
+
+
+
+
+
+
+
+																			<tr style="border-bottom:2px #ccc  solid;">
+																				<td class="item_list">N1-- </td>
+																				<td class="item_list">15/9999 </td>
+																				<td class="item_list">V </td>
+																				<td class="item_list">N1-- </td>
+																				<td class="item_list"> </td>
+																				<td class="item_list"> </td>
+																				<td class="item_list"> </td>
+																				<td class="item_list">9999 </td>
+																				<td class="item_list">
+
+																					<button type="button"
+																						group="input14076"
+																						onclick="dangKyNhomLopMonHoc(this, 1291631, 14076);"
+																						class="btn btn-block btn-primary btn-xs pull-right">
+																						Chọn
+																					</button>
+																					<label
+																						class="text-blue pull-right"><i
+																							class="fa "
+																							aria-hidden="true"></i></label>
+
+
+																				</td>
+																			</tr>
+
+																			<tr>
+																				<td class="item_list"></td>
+																				<td class="item_list" colspan="7">
+																					<!-- dungBuoiTraiBuoi
+		"DB--": Chi? mo+? ddu'ng buo^?i cu?a he^. dda`o ta.o
+		"TB--": Chi? mo+? tra'i buo^?i cu?a he^. dda`o ta.o
+		"DBTB": U+u tie^n mo+? ddu'ng buo^?i tru+o+'c, sau ddo' mo+'i mo+? tra'i buo^?i
+		"TBDB": U+u tie^n mo+? tra'i buo^?i tru+o+'c, sau ddo' mo+'i mo+? ddu'ng buo^?i
+		 -->
+																					<!-- hie^?n thi. Thu+' Tie^'t Pho`ng -->
+
+																					<table width="100%" class="table">
+																						<tbody>
+																							<tr
+																								style="border-bottom:2px #ccc  solid;">
+																								<th><em>Thứ</em></th>
+																								<th><em>Tiết</em></th>
+																								<th><em>Phòng</em></th>
+																								<th><em>CS</em></th>
+																								<th><em>BT/TN</em></th>
+																								<th><em>Tuần học</em>
+																								</th>
+																							</tr>
+
+
+																							<tr class="">
+
+																								<td class="item_list">
+																									Chưa biết </td>
+																								<td class="item_list">
+
+																									--
+																								</td>
+
+																								<td class="item_list">
+																								</td>
+																								<td class="item_list">
+																									DKNV </td>
+																								<td class="item_list">
+																								</td>
+																								<td class="item_list">
+
+																									1234567890123456--------------
+
+																								</td>
+
+
+																							</tr>
+																							<!--end foreach tkbChiTiet-->
+																						</tbody>
+																					</table>
+
+																					<!-- dungBuoiTraiBuoi -->
+
+																				</td>
+																				<td class="item_list"></td>
+																			</tr>
+
+																			<tr>
+																				<td class="item_list" colspan="9">
+																					<hr>
+																				</td>
+																			</tr>
+
+
+
+																			<tr style="border-bottom:2px #ccc  solid;">
+																				<td class="item_list">N12- </td>
+																				<td class="item_list">0/9999 </td>
+																				<td class="item_list">V </td>
+																				<td class="item_list">N12- </td>
+																				<td class="item_list"> </td>
+																				<td class="item_list"> </td>
+																				<td class="item_list"> </td>
+																				<td class="item_list">9999 </td>
+																				<td class="item_list">
+
+																					<button type="button"
+																						group="input14076"
+																						onclick="dangKyNhomLopMonHoc(this, 1291632, 14076);"
+																						class="btn btn-block btn-primary btn-xs pull-right">
+																						Chọn
+																					</button>
+																					<label
+																						class="text-blue pull-right"><i
+																							class="fa "
+																							aria-hidden="true"></i></label>
+
+
+																				</td>
+																			</tr>
+
+																			<tr>
+																				<td class="item_list"></td>
+																				<td class="item_list" colspan="7">
+																					<!-- dungBuoiTraiBuoi
+		"DB--": Chi? mo+? ddu'ng buo^?i cu?a he^. dda`o ta.o
+		"TB--": Chi? mo+? tra'i buo^?i cu?a he^. dda`o ta.o
+		"DBTB": U+u tie^n mo+? ddu'ng buo^?i tru+o+'c, sau ddo' mo+'i mo+? tra'i buo^?i
+		"TBDB": U+u tie^n mo+? tra'i buo^?i tru+o+'c, sau ddo' mo+'i mo+? ddu'ng buo^?i
+		 -->
+																					<!-- hie^?n thi. Thu+' Tie^'t Pho`ng -->
+
+																					<table width="100%" class="table">
+																						<tbody>
+																							<tr
+																								style="border-bottom:2px #ccc  solid;">
+																								<th><em>Thứ</em></th>
+																								<th><em>Tiết</em></th>
+																								<th><em>Phòng</em></th>
+																								<th><em>CS</em></th>
+																								<th><em>BT/TN</em></th>
+																								<th><em>Tuần học</em>
+																								</th>
+																							</tr>
+
+
+																							<tr class="">
+
+																								<td class="item_list">
+																									Chưa biết </td>
+																								<td class="item_list">
+
+																									--
+																								</td>
+
+																								<td class="item_list">
+																								</td>
+																								<td class="item_list">
+																									DKNV </td>
+																								<td class="item_list">
+																								</td>
+																								<td class="item_list">
+
+																									1234567890123456--------------
+
+																								</td>
+
+
+																							</tr>
+																							<!--end foreach tkbChiTiet-->
+																						</tbody>
+																					</table>
+
+																					<!-- dungBuoiTraiBuoi -->
+
+																				</td>
+																				<td class="item_list"></td>
+																			</tr>
+
+																			<tr>
+																				<td class="item_list" colspan="9">
+																					<hr>
+																				</td>
+																			</tr>
+
+
+
+																			<tr style="border-bottom:2px #ccc  solid;">
+																				<td class="item_list">N2-- </td>
+																				<td class="item_list">15/9999 </td>
+																				<td class="item_list">V </td>
+																				<td class="item_list">N2-- </td>
+																				<td class="item_list"> </td>
+																				<td class="item_list"> </td>
+																				<td class="item_list"> </td>
+																				<td class="item_list">9999 </td>
+																				<td class="item_list">
+
+																					<button type="button"
+																						group="input14076"
+																						onclick="dangKyNhomLopMonHoc(this, 1291633, 14076);"
+																						class="btn btn-block btn-primary btn-xs pull-right">
+																						Chọn
+																					</button>
+																					<label
+																						class="text-blue pull-right"><i
+																							class="fa "
+																							aria-hidden="true"></i></label>
+
+
+																				</td>
+																			</tr>
+
+																			<tr>
+																				<td class="item_list"></td>
+																				<td class="item_list" colspan="7">
+																					<!-- dungBuoiTraiBuoi
+		"DB--": Chi? mo+? ddu'ng buo^?i cu?a he^. dda`o ta.o
+		"TB--": Chi? mo+? tra'i buo^?i cu?a he^. dda`o ta.o
+		"DBTB": U+u tie^n mo+? ddu'ng buo^?i tru+o+'c, sau ddo' mo+'i mo+? tra'i buo^?i
+		"TBDB": U+u tie^n mo+? tra'i buo^?i tru+o+'c, sau ddo' mo+'i mo+? ddu'ng buo^?i
+		 -->
+																					<!-- hie^?n thi. Thu+' Tie^'t Pho`ng -->
+
+																					<table width="100%" class="table">
+																						<tbody>
+																							<tr
+																								style="border-bottom:2px #ccc  solid;">
+																								<th><em>Thứ</em></th>
+																								<th><em>Tiết</em></th>
+																								<th><em>Phòng</em></th>
+																								<th><em>CS</em></th>
+																								<th><em>BT/TN</em></th>
+																								<th><em>Tuần học</em>
+																								</th>
+																							</tr>
+
+
+																							<tr class="">
+
+																								<td class="item_list">
+																									Chưa biết </td>
+																								<td class="item_list">
+
+																									--
+																								</td>
+
+																								<td class="item_list">
+																								</td>
+																								<td class="item_list">
+																									DKNV </td>
+																								<td class="item_list">
+																								</td>
+																								<td class="item_list">
+
+																									1234567890123456--------------
+
+																								</td>
+
+
+																							</tr>
+																							<!--end foreach tkbChiTiet-->
+																						</tbody>
+																					</table>
+
+																					<!-- dungBuoiTraiBuoi -->
+
+																				</td>
+																				<td class="item_list"></td>
+																			</tr>
+
+																			<tr>
+																				<td class="item_list" colspan="9">
+																					<hr>
+																				</td>
+																			</tr>
+
+
+
+																			<tr style="border-bottom:2px #ccc  solid;">
+																				<td class="item_list">N21- </td>
+																				<td class="item_list">0/9999 </td>
+																				<td class="item_list">V </td>
+																				<td class="item_list">N21- </td>
+																				<td class="item_list"> </td>
+																				<td class="item_list"> </td>
+																				<td class="item_list"> </td>
+																				<td class="item_list">9999 </td>
+																				<td class="item_list">
+
+																					<button type="button"
+																						group="input14076"
+																						onclick="dangKyNhomLopMonHoc(this, 1291634, 14076);"
+																						class="btn btn-block btn-primary btn-xs pull-right">
+																						Chọn
+																					</button>
+																					<label
+																						class="text-blue pull-right"><i
+																							class="fa "
+																							aria-hidden="true"></i></label>
+
+
+																				</td>
+																			</tr>
+
+																			<tr>
+																				<td class="item_list"></td>
+																				<td class="item_list" colspan="7">
+																					<!-- dungBuoiTraiBuoi
+		"DB--": Chi? mo+? ddu'ng buo^?i cu?a he^. dda`o ta.o
+		"TB--": Chi? mo+? tra'i buo^?i cu?a he^. dda`o ta.o
+		"DBTB": U+u tie^n mo+? ddu'ng buo^?i tru+o+'c, sau ddo' mo+'i mo+? tra'i buo^?i
+		"TBDB": U+u tie^n mo+? tra'i buo^?i tru+o+'c, sau ddo' mo+'i mo+? ddu'ng buo^?i
+		 -->
+																					<!-- hie^?n thi. Thu+' Tie^'t Pho`ng -->
+
+																					<table width="100%" class="table">
+																						<tbody>
+																							<tr
+																								style="border-bottom:2px #ccc  solid;">
+																								<th><em>Thứ</em></th>
+																								<th><em>Tiết</em></th>
+																								<th><em>Phòng</em></th>
+																								<th><em>CS</em></th>
+																								<th><em>BT/TN</em></th>
+																								<th><em>Tuần học</em>
+																								</th>
+																							</tr>
+
+
+																							<tr class="">
+
+																								<td class="item_list">
+																									Chưa biết </td>
+																								<td class="item_list">
+
+																									--
+																								</td>
+
+																								<td class="item_list">
+																								</td>
+																								<td class="item_list">
+																									DKNV </td>
+																								<td class="item_list">
+																								</td>
+																								<td class="item_list">
+
+																									1234567890123456--------------
+
+																								</td>
+
+
+																							</tr>
+																							<!--end foreach tkbChiTiet-->
+																						</tbody>
+																					</table>
+
+																					<!-- dungBuoiTraiBuoi -->
+
+																				</td>
+																				<td class="item_list"></td>
+																			</tr>
+
+																			<tr>
+																				<td class="item_list" colspan="9">
+																					<hr>
+																				</td>
+																			</tr>
+																			<!--end foreach tkbDuKien-->
+
+																		</tbody>
+																	</table>
+
+
+
+
+
+																</div>
+															</div>
+
+														</div>
+													</div>
+												</div>
+
+											</td>
+										</tr>
+
+
+
+
+
+
+										</td>
+
+										<td class="item_list"><i class="arrow fa pull-right fa-angle-right"></i></td>
+										</tr>
+										<tr class="even  detail" style="display: none;">
+
+											<td colspan="7">
+												<div id="divTKBMonHoc14076" class="p-loading-element-mask"
+													style="min-height: 50px;"></div>
+
+											</td>
+										</tr>
+
+										<script>
+
+											jQuery("#monHocTable tr:odd").addClass("odd");
+											jQuery("#monHocTable tr:not(.odd)").hide();
+											jQuery("#monHocTable tr:first-child").show();
+
+										</script>
+							</div>
+						</div>
+
+					</div>
+				</div>
+			</div>
+			<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+			<script type="text/javascript" src="./assets/js/calendar.js"></script>
+			<script src="./assets/js/main.js"></script>
+</body>
+
+</html>

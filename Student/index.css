@@ -1,0 +1,210 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.container{
+    display: flex;
+    flex-direction: column;
+    flex:1;
+    height: 100vh;
+    width: 100%;
+    position: fixed;
+}
+.header{
+    background-color:#B02A2A;
+    
+    width: 100%;
+    height: 70px;
+    display: flex;
+    /* flex:1; */
+    flex-direction: row;
+    /* justify-content: end; */
+
+    img{
+        margin-left: 15px;
+        margin-right: 20px;
+        height: 60px;
+        align-self: center;
+        background-color: #B02A2A;
+    }
+    ul{
+        list-style-type: none; /* Xóa dấu chấm mặc định */
+        
+        margin: 0; /* Xóa khoảng cách mặc định */
+        padding: 0; /* Xóa đệm mặc định */
+    }
+    ul li{
+        display: inline;
+        line-height: 70px;
+        margin: 0 5px;
+        box-sizing: border-box;
+    }
+    li a{
+        text-decoration: none; /* Xóa dấu gạch ngang dưới */
+        line-height: 100%;
+        color: white;
+        font-size: 1.2rem;
+        font-weight: 550;
+        padding: 25px 22px;
+        cursor: pointer;
+    }
+    li a:hover{
+        background-color: #ae4646;
+    }
+    .search {
+        align-self: center;
+        width: 320px;
+        height: 30px;
+        margin-left: 600px;
+        margin-right: 0px;
+        position: relative;
+        /* background-color: ; */
+
+        .ti-search{
+            position: absolute;
+            top: 6px;
+            left: 10px;
+            font-size: 1.2rem;
+            color: black;
+        }
+        .search-input{
+            
+            position: absolute;
+            border-radius:20px;
+            width: 100%;
+            height: 30px;
+            font-size: medium;
+            /* border: none; */
+            /* border: 2px solid red; */
+
+            padding: 0 0 0 35px;
+        }
+       
+    }
+    
+    
+    .icon{
+        flex:1;
+        box-sizing: border-box;
+        font-size: 1.6rem;
+        align-self: center;
+        margin-left: 15px;
+        cursor: pointer;
+        background-color: #B02A2A;
+        border: none;
+    }
+    .ti-bell{
+        position: relative;
+    }
+    .ti-bell:hover{
+        background-color: #ae4646;
+    }
+    .ti-bell li{
+        display: inline-block;
+        width: 210px;
+        margin: 0;
+    }
+    .ti-bell li:hover {
+        background-color: #e4bdbd;
+    }
+    .ti-bell ul{
+        position: absolute;
+        display: none;
+        right:15px ;
+        top: 50px;
+        background-color: white;
+        font-size: 1.3rem;
+        width: auto;
+    }
+    
+}
+.form-login{
+    /* background-color: green; */
+    background-image: url("../img/what-background-study-how-to-write-1200x801.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    width: 100%;
+    height: 100%;
+}
+
+.form-login{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.login-box{
+    display: flex;
+    flex-direction: column;
+  position: relative;
+  width: 350px;
+  height: 450px;
+  background-color: #DFDFDF;
+  border: 2px solid var(white);
+  border-radius: 25px;
+  padding: 2.5em 2.5em 3.5em 2.5em;
+  color: var(#ffffff);
+  box-shadow: 0px 0px 10px 10px rgba(0, 0,0,0.1);
+}
+.login-header{
+    width: 100%;
+    max-height: 240px;
+    flex:1;
+    /* background-color: beige; */
+    text-align: center;
+
+    img{
+        height: 140px;
+        margin-top: 20px;
+    }
+    h2{
+        font-size: 2.6rem;
+        margin-top: 20px;
+
+    }
+}
+.input-box{
+    /* flex:1; */
+    max-height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 25px;
+    border-top: 1px solid #000; 
+    border-bottom: 1px solid #000; 
+    position: relative;
+
+    .box{
+        width: 100%;
+        height: 50px;
+        /* padding: 10px; */
+        background-color: white;
+        margin-top: 10px;
+        border: none;
+        border-radius: 15px;
+    }
+    a{
+        width: 170px;
+        padding: 13px 90px;
+    }
+    a, label{
+        position: absolute;
+        font-size: 1.3rem;
+        font-weight: 540;
+        text-decoration: none;
+        color: black;
+        
+    }
+    .gv-sv{
+        top: 10px;
+        left: 0px;
+    }
+    .admin{
+        text-align: center;
+        left: 0px;
+        top: 72px;
+    }
+
+}
+

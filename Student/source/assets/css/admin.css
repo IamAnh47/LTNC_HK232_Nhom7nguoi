@@ -1,0 +1,123 @@
+.login-header{
+
+    flex: 0.9;
+    margin-bottom: 10px;
+h2{
+    margin: 0;
+    font-size: 2rem;
+    color: #B02A2A;
+    margin-top: 5px;
+}
+}
+
+
+
+.login-box img{
+    /* padding: 0px; */
+    height: 120px;
+    margin: 0;
+}
+
+
+.input-box{
+    min-height: 190x;
+    max-height: 250px;
+    /* display: flex; */
+    /* flex-direction: column; */
+    /* justify-content: center; */
+    border-top: 1px solid #000; 
+    border-bottom: 1px solid #000; 
+    margin-top: 5px;
+    position: relative;
+
+
+    .form-input{
+        /* box-sizing: border-box; */
+        height: 70px;
+        width: 100%;
+        position: relative;
+
+        /* margin-top: 15px; */
+        
+    }
+    input{
+        box-sizing: border-box;
+        height: 50px;
+        width: 100%;
+        /* margin-top: 20px; */
+        /* flex:1; */
+        border: none;
+        padding: 25px;
+        border-radius: 20px;
+        font-size: 1.1rem;
+        margin: auto;
+    }   
+    
+}
+.input-box label {
+    font-size: 1.2rem;
+    transition: 0.4s;
+    color: rgb(29, 23, 23,0.7);
+}
+.user-label{
+    top:16px;
+    left:25px;
+}
+.password-label{
+    top: 16px;
+    left:25px;
+}
+
+
+.form-input .form-message{
+    display: inline-block;
+    margin-left: 25px;
+}
+.invalid label{
+    color: rgba(204, 9, 9,0.7);
+}
+.user-input:focus ~ .user-label,.password-input:focus ~ .password-label,  label.focus-label{
+    /* position: absolute; */
+    top: -8px;
+    left: 15px;
+  font-size: 15px;
+  background-color: #B02A2A;
+  border-radius: 30px;
+  color: white;
+  padding: 0 10px;
+  transition: 0.3s;
+  opacity: 1;
+} 
+
+
+.remember-forgot{
+text-align: start;
+margin: 10px;
+}
+.input-submit{
+    width: 100%;
+    height: 45px;
+    border-radius: 25px;
+    border: none;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: 0.3s;
+    background-color: #B02A2A;
+    color: white;
+}
+.input-submit:hover{
+    transition: 0.3s;
+    opacity: 0.8;
+}
+.invalid{
+    .form-message{
+        color: rgb(204, 9, 9);
+    }
+    .box-input{
+        border: 2px solid rgb(204, 9, 9);
+    }
+}
+
+.form-input.invalid{
+    margin-bottom: 10px;
+}

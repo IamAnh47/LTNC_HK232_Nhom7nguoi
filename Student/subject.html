@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Course</title>
+    <link rel="stylesheet" href="subject.css">
+</head>
+
+<body>
+    <div class="header">
+        <div class="logo">
+            <img src="./assets/img/logo.png" alt="" width="70" srcset="" class="logo-img" />
+            <b>Harvard University</b>
+        </div>
+        <a class="home" href="main.html">Home</a>
+    </div>
+    <button style="font-size: 26px;color:black;" id="toggleButton" onclick="toggleSidebar()">☰ Select Subject</button>
+    <div id="sidebar" class="sidebar">
+        <h2 style="color:black;">Subject Panel</h2>
+        <a class="sub" href="#subject1" onclick="displaySubject('subject1')">DSA</a>
+        <a class="sub" href="#subject2" onclick="displaySubject('subject2')">KTMT</a>
+        <a class="sub" href="#subject3" onclick="displaySubject('subject3')">Math Moduling</a>
+        <a class="sub" href="#subject4" onclick="displaySubject('subject4')">Philosophy</a>
+    </div>
+    <div id="content" class="content">
+        <main>
+            <div style="text-align: center;" id="main_content" class="main_content">
+                Have a good day bro !
+            </div>
+        </main>
+    </div>
+    <footer>
+        <div style="color:black" class="footer_content">
+            <h4>Contact with me</h4>
+            <p>Tel : 0327628468</p>
+            <p>Email : tam.chu2213009@hcmut.edu.vn</p>
+        </div>
+    </footer>
+    <script type="module" defer src="firebase.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="grade.css">
+    <title>Student Grades</title>
+</head>
+
+<body>
+    <div class="header">
+        <div class="logo">
+            <img src="./assets/img/logo.png" alt="Harvard University Logo" width="70" class="logo-img" />
+            <b>Harvard University</b>
+        </div>
+        <a class="home" href="main.html">Home</a>
+    </div>
+    <h1 style="margin-top:20px;color:black">Student Grades</h1>
+    <table id="gradesTable" border="1">
+        <tr>
+            <th style="text-align: center; color: black;background-color: var(--black);">Subject</th>
+            <th style="text-align: center; color: black;background-color: var(--black);">Grade</th>
+        </tr>
+    </table>
+
+    <script type="module">
+        // Import và cấu hình Firebase
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.9.0/firebase-app.js";
+        import { getDatabase, ref, get } from "https://www.gstatic.com/firebasejs/10.9.0/firebase-database.js";
+
+        const firebaseConfig = {
+            apiKey: "AIzaSyCoGQjpXJgWAmJAbrONBUJcR04s6ePoheo",
+            authDomain: "database-8cc6c.firebaseapp.com",
+            databaseURL: "https://database-8cc6c-default-rtdb.firebaseio.com",
+            projectId: "database-8cc6c",
+            storageBucket: "database-8cc6c.appspot.com",
+            messagingSenderId: "836560995551",
+            appId: "1:836560995551:web:a7e3e5d39386cc2a92956a",
+            measurementId: "G-8P23C7RX1L"
+        };
+
+        // Initialize Firebase  
+        const app = initializeApp(firebaseConfig);
+        const database = getDatabase(app);
+
+        async function getGradesAndDisplay(studentId) {
+            const studentRef = ref(database, 'Student/' + studentId + '/Course');
+
+            try {
+                // Kiểm tra kết nối mạng trước khi lấy dữ liệu
+                if (navigator.onLine) {
+                    const snapshot = await get(studentRef);
+                    if (snapshot.exists()) {
+                        const data = snapshot.val();
+                        const gradesTable = document.getElementById('gradesTable');
+                        let totalGrades = 0;
+                        let numberOfSubjects = 0;
+
+                        for (const subjectId in data) {
+                            if (data.hasOwnProperty(subjectId)) {
+                                const subject = data[subjectId];
+                                const grade = subject?.Grade;
+                                const subjectName = subject?.Name;
+                                if (grade !== undefined && subjectName !== undefined) {
+                                    // Tạo hàng mới cho bảng
+                                    const row = gradesTable.insertRow();
+                                    // Tạo ô cho tên môn học
+                                    const cell1 = row.insertCell(0);
+                                    // Tạo ô cho điểm
+                                    const cell2 = row.insertCell(1);
+                                    // Đặt giá trị cho các ô
+                                    cell1.innerHTML = `<div style="text-align:center">${subjectName}</div>`;
+                                    cell2.innerHTML = `<div style="text-align:center">${grade}</div>`;
+
+                                    // Tính tổng điểm và số lượng môn học
+                                    totalGrades += grade;
+                                    numberOfSubjects++;
+                                }
+                            }
+                        }
+
+                        // Tính điểm trung bình GPA
+                        const gpa = totalGrades / numberOfSubjects;
+
+                        // Thêm hàng mới cho GPA
+                        const gpaRow = gradesTable.insertRow();
+                        const gpaCell1 = gpaRow.insertCell(0);
+                        const gpaCell2 = gpaRow.insertCell(1);
+                        gpaCell1.innerHTML = '<div id="GPA" style="text-align:center;"><b>GPA</b></div>';
+                        gpaCell2.innerHTML = `<div style="text-align:center;"><b>${gpa.toFixed(2)}</b></div>`; // Làm tròn đến 2 chữ số thập phân
+                    } else {
+                        console.log('No data available');
+                    }
+                } else {
+                    console.log('Client is offline. Please check your internet connection.');
+                }
+            } catch (error) {
+                console.error('Error getting data:', error);
+            }
+        }
+
+        // Sử dụng hàm
+        getGradesAndDisplay('123'); // Thay '123' bằng studentId thực tế
+    </script>
+
+    <footer>
+        <div style="color: black;" class="footer_content">
+            <h4>Contact with me</h4>
+            <p>Tel : 0327628468</p>
+            <p>Email : tam.chu2213009@hcmut.edu.vn</p>
+        </div>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+  <link rel="stylesheet" href="./assets/calendar.css" />
+  <link rel="stylesheet" href="./assets/style.css" />
+  <link rel="stylesheet" href="./assets/font/themify-icons-font/themify-icons/themify-icons.css" />
+  <title>Information</title>
+</head>
+
+<body>
+  <div class="main-container d-flex justify-content-between">
+    <!-- Left Layout -->
+    <div class="sidebar vh-100 d-none d-sm-none d-md-none d-xl-flex">
+      <div class="sidebar_top-content">
+        <div class="sidebar_logo-wrapper p-2 d-flex align-items-center">
+          <img src="./assets/img/logo.png" alt="" sizes="" srcset="" class="logo-img" />
+          <div class="sidebar_edu-name">Harvard University</div>
+        </div>
+
+        <div class="sidebar_menu-wrapper">
+          <a href="./main.html" aria-hidden class="">
+            <div id="" class="sidebar_menu-item">My Course</div>
+          </a>
+          
+        </div>
+      </div>
+      <div class="sidebar_bottom-content show-panel">
+        <img src="./assets/img/waifu.jpg" alt="" sizes="" srcset="" class="avatar-img" />
+        <div class="sidebar_user-info-wrapper">
+          <div style="color: #cbd5e1">Welcome back</div>
+          <div class="sidebar_username">Minh Tâm</div>
+        </div>
+        <i class="bi bi-chevron-up"></i>
+        <div class="sidebar_bottom-panel show" style="height: 200px; text-decoration: none;">
+          <div class=" sidebar_bottom-panel-title">
+            Computer Science
+          </div>
+          <div class="sidebar_bottom-panel-menu-wrapper pt-2">
+            <a style="text-decoration: none;" href="./grade.html">
+              <div style="color:purple;" class="sidebar_bottom-panel-item">Grade</div>
+            </a>
+            <a style="text-decoration: none;" href="./adminLogin.html">
+              <div class="sidebar_bottom-panel-item">Log out</div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Main Layout -->
+    <div class="main flex-grow-1">
+      <div class="main_infomation-container">
+        <div class="main_infomation-header title-heading mb-2">Information</div>
+        <div class="row">
+          <!-- Information Section -->
+          <div class="col-12 col-md-8">
+            <!-- Information Alerts -->
+            <div id="infoStudentId" class="alert"></div>
+            <div id="infoName" class="alert"></div>
+            <div id="infoBirth" class="alert"></div>
+            <div id="infoGender" class="alert"></div>
+            <div id="infoFaculty" class="alert"></div>
+            <div id="infoClass" class="alert"></div>
+            <div id="infoCountry" class="alert"></div>
+          </div>
+          <!-- Avatar Section -->
+          <div class="col-12 col-md-4">
+            <div class="avatar-wrapper">
+              <img src="./assets/img/ava.jpg" width="100%" alt="" srcset="">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script type="module" src="firebase.js"></script>
+</body>
+
+</html>
